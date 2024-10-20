@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Ampera Mandiri Jaya</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Font CSS */
+      @font-face {
+        font-family: "TT Neoris Trial Bold";
+        src: url("./TT\ Neoris\ Trial\ Bold.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Medium";
+        src: url("./TT\ Neoris\ Trial\ Medium.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Regular";
+        src: url("./TT\ Neoris\ Trial\ Regular.ttf");
+      }
+
+      #neoris-bold {
+        font-family: "TT Neoris Trial Bold";
+      }
+
+      #neoris-medium {
+        font-family: "TT Neoris Trial Medium";
+      }
+
+      #neoris-regular {
+        font-family: "TT Neoris Trial Regular";
+      }
+
+      /* CSS untuk efek slide up */
+      .slide-up {
+        opacity: 0;
+        transform: translateY(30px); /* Awal animasi, turun 30px */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-up.show {
+        opacity: 1;
+        transform: translateY(0); /* Akhir animasi, di posisi aslinya */
+      }
+
+      body {
+        font-family: TT Neoris Trial, sans-serif;
+        color: #333;
+      }
+
+      /* CSS untuk Banner */
+      .banner {
+        background-image: url("img/Banner2.png");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+        text-align: justify;
+        /* padding: 80px; */
+      }
+
+      /* CSS untuk About */
+      .about-company {
+        background-color: white;
+        color: #212529;
+        text-align: justify;
+        align-items: center;
+        padding: 50px 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .ourlogo {
+        flex: 1;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .ourlogo img {
+        max-width: 40%;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .about-company {
+          flex-direction: column;
+        }
+
+        .ourlogo {
+          margin-top: 30px;
+        }
+      }
+
+      .about-company h2 {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      /* CSS untuk Service*/
+      .title-services {
+        padding: 20px;
+        margin-top: 30px;
+        color: white;
+        font-size: 3;
+        font-weight: medium;
+      }
+
+      .service-section {
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .service-section.dark-bg {
+        background-color: #212529;
+        color: #fff;
+      }
+      .container-services {
+        background-image: url(img/Bg_visi.png);
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+      }
+
+      .service-item {
+        background: white;
+        color: #212529;
+        padding: 10px;
+        text-align: center;
+        height: 80%;
+        margin: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .service-item:hover {
+        transform: translateY(-10px); /* Mengangkat sedikit elemen */
+        box-shadow: 0 4px 8px #5975d6; /* Tambahkan bayangan */
+        background-color: #f8f9fa; /* Ubah warna background saat hover */
+      }
+
+      /* Tambahkan efek hover untuk ikon */
+      .service-item i {
+        transition: color 0.3s ease;
+      }
+
+      .service-item:hover i {
+        color: #007bff; /* Ubah warna ikon saat hover */
+      }
+
+      /* Setting Ukuran Image */
+      .service-item img {
+        width: 50%;
+        height: 70%;
+      }
+
+      /* CSS untuk visi */
+      .section-visi {
+        padding: 60px 0;
+        color: white;
+        background-image: url(img/Bg_visi2.png);
+        background-color: #f8f9fa;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .visi-misi {
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      /* CSS untuk Project */
+      .section-project {
+        color: white;
+        align-items: center;
+      }
+
+      .project-container {
+        padding: 50px 0;
+        margin-bottom: 20px;
+        color: #212529;
+      }
+
+      .project-img {
+        margin: 20px 0;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-img:hover {
+        transform: scale(1.1); /* Memperbesar gambar sedikit */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Memberikan bayangan */
+      }
+
+      /* CSS untuk Kontak */
+      .section-kontak {
+        background-color: #212529;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+
+      .title-kontak {
+        padding: 30px 0;
+      }
+
+      .content-kontak {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      /* CSS untuk Footer */
+      footer {
+        background-color: #212529;
+        color: white;
+        padding: 40px 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+      <div class="container">
+        <img width="70" height="70" src="img/AMJ_Logo.png" alt="" />
+        <a class="navbar-brand fw-bold m-4" href="index.html"
+          >PT AMPERA MANDIRI JAYA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section id="Banner_" class="banner">
+      <div class="container">
+        <p class="fs-1 fw-bold"><span class="">AMPERA MANDIRI JAYA</p>
+        <p class="fs-4 fw-regular">
+          Oil Tools Fabrication and Repair Service<br />
+          General Supply and Special Tools
+        </p>
+      </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="about_" class="about-company py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 ml-lg-5">
+            <h2 class="fw-medium">Profile Company</h2>
+            <p class="fw-regular mt-4">
+              PT Ampera Mandiri Jaya merupakan perusahaan yang bergerak dibidang
+              manufaktur industri Palm Oil dan industri Oil and Gas. Kami
+              memiliki pengalaman dalam pembuatan peralatan yang dibutuhkan
+              dalam proses pengolahan kelapa sawit sesuai permintaan customer
+              dan kami berpengalaman melayani pembuatan peralatan yang digunakan
+              dalam industri minyak dan gas maupun spesial tools lainnya.
+            </p>
+          </div>
+          <div class="ourlogo">
+            <img src="img/AMJ_Logo.png" alt="Company Profile" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi dan Misi Section -->
+    <section id="visi_" class="section-visi text-center">
+      <div class="container slide-up">
+        <h2 class="fw-medium">Visi</h2>
+        <p class="visi-misi fw-regular">
+          Membangun perusahaan yang terpercaya melalui profesionalisme <br />
+          dan etika bisnis untuk mencapai kepuasan pelanggan
+        </p>
+        <h2 class="fw-medium">Misi</h2>
+        <p class="visi-misi fw-regular">
+          Berkomitmen untuk memenuhi kebutuhan pelanggan melalui tenaga
+          profesional <br />
+          dan fasilitas produksi canggih, serta meningkatkan kepuasan pelanggan
+          secara berkelanjutan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project Kami Section -->
+    <section id="project_" class="section-project text-center slide-up">
+      <div class="project-container">
+        <h2 class="fw-medium">Preview Project</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              src="img/mud_tank.png"
+              alt="Project 1"
+              class="project-img mt-lg-5"
+            />
+            <p class="fw-medium mt-3">MUD Tank - Project PT Umran Rubi Jaya</p>
+          </div>
+          <div class="col-md-3">
+            <img
+              src="img/airlock.png"
+              alt="Project 2"
+              class="project-img mt-lg-5"
+            />
+            <p class="fw-medium mt-3">
+              Airlock Destoner - Project Kalimantan Barat & Papua Nabire
+            </p>
+          </div>
+          <div class="col-md-3">
+            <img
+              src="img/thresher1.png"
+              alt="Project 3"
+              class="project-img mt-lg-5"
+            />
+            <p class="fw-medium mt-3">
+              Thresher Drum - Project Kalimantan Tengah
+            </p>
+          </div>
+          <div class="col-md-3">
+            <img src="img/wttank.png" alt="Project 4" class="project-img mt-lg-5" />
+            <p class="fw-medium mt-3">
+              Water Tank - Project Lamongan Jawa Timur
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oil Tools Services Section -->
+    <section class="service-section">
+      <div class="container-services">
+        <h2 class="title-services">Our Services</h2>
+        <div class="mt-4 project-grid">
+          <div class="service-item py-5">
+            <i class="fa-solid fa-toolbox fa-5x my-3"></i>
+            <h2 class="fs-3 mt-2">Oil Tools Fabrication</h2>
+            <p class="fw-regular mt-2">
+              Kami menyediakan layanan pembuatan alat pendukung <br />
+              sektor Oil and Gas Palm Oil sesuai spesifikasi yang dibutuhkan
+              oleh pelanggan.
+            </p>
+          </div>
+        </div>
+        <div class="mt-4 project-grid">
+          <div class="service-item py-5">
+            <i class="fas fa-tools fa-5x my-3"></i>
+            <h2 class="fs-3 mt-2">Repair Services</h2>
+            <p class="fw-regular mt-2">
+              Kami menyediakan layanan perbaikan <br />dan pemeliharaan untuk
+              kebutuhan pelanggan dan sesuai permintaan serta spesifikasi yang
+              diinginkan.
+            </p>
+          </div>
+        </div>
+        <div class="mt-4 project-grid">
+          <div class="service-item py-5">
+            <i class="fa-regular fa-handshake fa-5x my-3"></i>
+            <h2 class="fs-3 mt-2">General Supply</h2>
+            <p class="fw-regular mt-2">
+              Kami menyediakan bahan baku, komponen dan peralatan yang bersifat
+              finished good untuk mendukung proses manufaktur.<br />Seperti
+              material, peralatan maupun perlengkapan kerja sesuai permintaan
+              pelanggan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="section-kontak text-center">
+      <div class="container">
+        <h2 class="title-kontak fw-medium fs-3">Info Pemesanan Hubungi Kami</h2>
+        <p class="content-kontak fw-regular">
+          <i class="fas fa-phone-alt fs-5"></i> +62 813 9822 3493 |
+          <i class="fas fa-envelope fs-5"></i> marketing@amperamandirijaya.co.id
+        </p>
+        <p class="content-kontak fw-regular">
+          <i class="fas fa-map-marker-alt fs-5"></i> Workshop Location: JL. WR
+          Supratman RT.001 RW.007, Kel. Cimuning Mustikajaya, Kota Bekasi 17155
+        </p>
+        <iframe
+          src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="300"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+          class="mb-lg-5 py-3"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="container">
+        <p>© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      // Tambahkan JavaScript untuk smooth scroll jika diinginkan
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // JavaScript untuk mendeteksi elemen yang muncul di viewport
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".slide-up");
+
+        const scrollTrigger = (element) => {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight) * 0.85
+          );
+        };
+
+        const handleScroll = () => {
+          elements.forEach((element) => {
+            if (scrollTrigger(element)) {
+              element.classList.add("show");
+            }
+          });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("load", handleScroll); // In case element is already in viewport on load
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

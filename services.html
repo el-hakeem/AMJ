@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Ampera Mandiri Jaya - Projects</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Style -->
+    <style>
+      /* Font */
+      @font-face {
+        font-family: "TT Neoris Trial Bold";
+        src: url("./TT\ Neoris\ Trial\ Bold.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Medium";
+        src: url("./TT\ Neoris\ Trial\ Medium.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Regular";
+        src: url("./TT\ Neoris\ Trial\ Regular.ttf");
+      }
+
+      #neoris-bold {
+        font-family: "TT Neoris Trial Bold";
+      }
+
+      #neoris-medium {
+        font-family: "TT Neoris Trial Medium";
+      }
+
+      #neoris-regular {
+        font-family: "TT Neoris Trial Regular";
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: TT Neoris Trial, sans-serif;
+        line-height: 1.6;
+        color: #212529;
+      }
+
+      /* CSS untuk Navbar*/
+      .navbar {
+        background-color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        max-width: 100px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #212529;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+
+      .nav-links li a:hover {
+        background-color: #eee;
+        border-radius: 5px;
+      }
+
+      /* CSS untuk Banner */
+      .banner {
+        background-image: url("img/project_banner2.png");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        position: relative;
+        /* color: white;
+        text-align: center; */
+      }
+      .title-banner {
+        color: white;
+        background: linear-gradient(
+          90deg,
+          #5975d6 0%,
+          #3a4054 50%,
+          rgba(39, 37, 37, 0.5) 80%,
+          rgba(39, 37, 37, 0) 100%
+        );
+        padding: 10px 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      @media (min-width: 768px) {
+        .title-banner {
+          padding: 10px 100px; /* Untuk layar yang lebih besar */
+        }
+      }
+
+      /* CSS untuk Service*/
+      .service-section {
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .service-section.dark-bg {
+        background-color: #212529;
+        color: #fff;
+      }
+      .container-services {
+        background-image: url(img/Bg_visi.png);
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+      }
+
+      .service-item {
+        background: white;
+        color: #212529;
+        padding: 10px;
+        text-align: center;
+        height: 80%;
+        margin: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .service-item:hover {
+        transform: translateY(-10px); /* Mengangkat sedikit elemen */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+        background-color: #f8f9fa; /* Ubah warna background saat hover */
+      }
+
+      /* Tambahkan efek hover untuk ikon */
+      .service-item i {
+        transition: color 0.3s ease;
+      }
+
+      .service-item:hover i {
+        color: #007bff; /* Ubah warna ikon saat hover */
+      }
+
+      /* Setting Ukuran Image */
+      .service-item img {
+        width: 50%;
+        height: 70%;
+      }
+
+      /* CSS untuk Kontak */
+      .info-pemesanan {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #212529;
+        color: white;
+        padding: 50px 130px;
+      }
+
+      .info-content {
+        flex: 1;
+        margin-right: 30px; /* Memberi jarak antara teks dan peta */
+      }
+
+      .map {
+        width: 45%; /* Sesuaikan lebar peta */
+      }
+
+      .info-pemesanan i {
+        margin-right: 10px;
+        color: white;
+      }
+
+      /* Responsif untuk layar kecil */
+      @media only screen and (max-width: 768px) {
+        .info-pemesanan {
+          flex-direction: column; /* Stack elemen di atas satu sama lain */
+          padding: 50px 30px; /* Sesuaikan padding untuk mobile */
+        }
+
+        .map {
+          width: 100%; /* Lebar penuh untuk iframe pada layar kecil */
+          margin-top: 20px; /* Beri jarak antara teks dan iframe */
+        }
+      }
+
+      /* CSS untuk Footer*/
+      footer {
+        background-color: #212529;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        margin-bottom: 20px;
+      }
+
+      #map {
+        height: 200px;
+        width: 100%;
+        background: url("map.png") no-repeat center center/cover;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .hero {
+          height: 30vh;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img width="70" height="70" src="img/AMJ_Logo.png" alt="" />
+        <a class="navbar-brand fw-bold ml-4" href="index.html"
+          >PT AMPERA MANDIRI JAYA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div class="title-banner">
+        <h2>Layanan Kami</h2>
+        <p class="fs-5 fw-regular">(Our Services)</p>
+      </div>
+    </section>
+
+    <!-- Oil Tools Services Section -->
+    <section class="service-section">
+      <div class="container-services">
+        <div class="mt-4 project-grid">
+          <div class="service-item py-5">
+            <i class="fa-solid fa-toolbox fa-5x my-3"></i>
+            <h2 class="fs-3 mt-2">Oil Tools Fabrication</h2>
+            <p class="fw-regular mt-2">
+              Kami menyediakan layanan pembuatan alat pendukung <br />
+              sektor Oil and Gas Palm Oil sesuai spesifikasi yang dibutuhkan
+              oleh pelanggan.
+            </p>
+          </div>
+        </div>
+        <div class="mt-4 project-grid">
+          <div class="service-item py-5">
+            <i class="fas fa-tools fa-5x my-3"></i>
+            <h2 class="fs-3 mt-2">Repair Services</h2>
+            <p class="fw-regular mt-2">
+              Kami menyediakan layanan perbaikan <br />dan pemeliharaan untuk
+              kebutuhan pelanggan dan sesuai permintaan serta spesifikasi yang
+              diinginkan.
+            </p>
+          </div>
+        </div>
+        <div class="mt-4 project-grid">
+          <div class="service-item py-5">
+            <i class="fa-regular fa-handshake fa-5x my-3"></i>
+            <h2 class="fs-3 mt-2">General Supply</h2>
+            <p class="fw-regular mt-2">
+              Kami menyediakan bahan baku, komponen dan peralatan yang bersifat
+              finished good untuk mendukung proses manufaktur.<br />Seperti
+              material, peralatan maupun perlengkapan kerja sesuai permintaan
+              pelanggan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="info-pemesanan">
+      <div class="info-content">
+        <div class="title-content">
+          <h4 class="title fw-medium">Info Pemesanan</h4>
+          <p>Silahkan hubungi kami untuk informasi lebih lanjut</p>
+        </div>
+        <div class="office pt-3 mt-lg-2">
+          <h4 class="title-ho fw-medium">Head Office</h4>
+          <p class="fw-regular">
+            Mutiara Gading Timur 2 Blok N1/8D<br />
+            Mustikajaya, Kota Bekasi, Jawa Barat<br />
+            Indonesia 17518
+          </p>
+        </div>
+        <div class="workshop">
+          <h4 class="fw-medium">Workshop</h4>
+          <p class="fw-regular">
+            Jl. WR Supratman RT.001 RW.007<br />
+            Kel. Cimuning Mustikajaya, Kota Bekasi 17518
+          </p>
+        </div>
+        <div class="fw-regular">
+          <p class="fw-regular mt-3">
+            <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+          </p>
+          <p class="fw-regular mt-3">
+            <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+          </p>
+        </div>
+      </div>
+      <div class="map p-3">
+        <iframe
+          src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="250"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p class="copyright">© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

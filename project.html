@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Ampera Mandiri Jaya - Projects</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Style -->
+    <style>
+      /* Font */
+      @font-face {
+        font-family: "TT Neoris Trial Bold";
+        src: url("./TT\ Neoris\ Trial\ Bold.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Medium";
+        src: url("./TT\ Neoris\ Trial\ Medium.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Regular";
+        src: url("./TT\ Neoris\ Trial\ Regular.ttf");
+      }
+
+      #neoris-bold {
+        font-family: "TT Neoris Trial Bold";
+      }
+
+      #neoris-medium {
+        font-family: "TT Neoris Trial Medium";
+      }
+
+      #neoris-regular {
+        font-family: "TT Neoris Trial Regular";
+      }
+
+      /* CSS untuk efek slide up */
+      .slide-up {
+        opacity: 0;
+        transform: translateY(30px); /* Awal animasi, turun 30px */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-up.show {
+        opacity: 1;
+        transform: translateY(0); /* Akhir animasi, di posisi aslinya */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: TT Neoris Trial, sans-serif;
+        line-height: 1.6;
+        color: #212529;
+      }
+
+      /* CSS untuk Navbar*/
+      .navbar {
+        background-color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        max-width: 100px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #212529;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+
+      .nav-links li a:hover {
+        background-color: #eee;
+        border-radius: 5px;
+      }
+
+      /* CSS untuk Banner */
+      .banner {
+        background-image: url("img/Bg_visi.png");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        position: relative;
+        /* color: white;
+        text-align: center; */
+      }
+      .title-banner {
+        color: white;
+        background: linear-gradient(
+          90deg,
+          #5975d6 0%,
+          #3a4054 50%,
+          rgba(39, 37, 37, 0.5) 80%,
+          rgba(39, 37, 37, 0) 100%
+        );
+        padding: 10px 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      @media (min-width: 768px) {
+        .title-banner {
+          padding: 10px 100px; /* Untuk layar yang lebih besar */
+        }
+      }
+
+      /* CSS untuk Project*/
+      .project-section {
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .project-section.dark-bg {
+        background-color: #212529;
+        color: #fff;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+      }
+
+      /* .grid-other {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px 20px;
+      } */
+
+      .project-palm {
+        background: #f4f4f4;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-palm:hover {
+        transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
+        box-shadow: 0px 10px 20px #212529; /* Menambahkan bayangan */
+        background-color: #f5f3f3;
+      }
+
+      .project-item {
+        background: #f4f4f4;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-item:hover {
+        transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
+        box-shadow: 0px 10px 20px #5975d6; /* Menambahkan bayangan */
+        background-color: #f5f3f3;
+      }
+
+      /* Setting Ukuran Image */
+      .palm-img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .gas-img {
+        width: 100%;
+        height: 200px;
+      }
+      .other-img {
+        width: 55%;
+        height: 200px;
+        border-radius: 10px;
+        /* max-width: 1200px;
+        margin: 0 auto; */
+      }
+
+      .oil-deskripsi {
+        color: #212529;
+      }
+
+      /* CSS untuk Kontak */
+      .section-kontak {
+        background-color: #212529;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+
+      .title-kontak {
+        padding: 30px 0;
+      }
+
+      .content-kontak {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      /* CSS untuk Footer*/
+      footer {
+        background-color: #212529;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        margin-bottom: 20px;
+      }
+
+      #map {
+        height: 200px;
+        width: 100%;
+        background: url("map.png") no-repeat center center/cover;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .hero {
+          height: 30vh;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img width="70" height="70" src="img/AMJ_Logo.png" alt="" />
+        <a class="navbar-brand fw-bold ml-4" href="index.html"
+          >PT AMPERA MANDIRI JAYA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div class="title-banner">
+        <h2>Pratinjau Proyek</h2>
+        <p class="fs-5 fw-regular">(Preview Project)</p>
+      </div>
+    </section>
+
+    <!-- Palm Oil Project Section -->
+    <section class="project-section">
+      <h2 class="fw-medium title-oil m-3">Palm Oil Project</h2>
+      <div class="mt-lg-4 project-grid slide-up">
+        <div class="project-palm">
+          <img src="img/airlock.png" alt="Air Lock Destoner" class="palm-img" />
+          <p class="fw-regular mt-4">
+            <strong>Air Lock Destoner</strong><br />Project Kalimantan Barat dan
+            Papua Nabire<br />Tahun 2024
+          </p>
+        </div>
+        <div class="project-palm">
+          <img src="img/thresher1.png" alt="Thresher Drum" class="palm-img" />
+          <p class="fw-regular mt-4">
+            <strong>Thresher Drum</strong><br />Project Kalimantan Tengah<br />Tahun
+            2024
+          </p>
+        </div>
+        <div class="project-palm">
+          <img
+            src="img/conveyor.jpg"
+            alt="FBB Recycling Conveyor"
+            class="palm-img"
+          />
+          <p class="fw-regular mt-4">
+            <strong>FBB Recycling Conveyor</strong><br />Project Kalimantan
+            Tengah<br />Tahun 2024
+          </p>
+        </div>
+        <div class="project-palm">
+          <img
+            src="img/empty_bunch.png"
+            alt="Empty Bunch Press Conveyor"
+            class="palm-img"
+          />
+          <p class="fw-regular mt-4">
+            <strong>Empty Bunch Press Conveyor</strong><br />Project Kalimantan
+            Tengah<br />Tahun 2024
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oil and Gas Project Section -->
+    <section class="project-section dark-bg">
+      <h2 class="fw-medium title-gas">Oil and Gas Project</h2>
+      <div class="mt-lg-4 project-grid slide-up">
+        <div class="project-item">
+          <img src="img/mud_tank.png" alt="MUD Tank" class="gas-img" />
+          <p class="oil-deskripsi fw-regular mt-4">
+            <strong>MUD Tank</strong><br />Project PT Umran Rubi Jaya<br />Tahun
+            2024
+          </p>
+        </div>
+        <div class="project-item">
+          <img src="img/dump_roll.png" alt="Dump Arm Roll" class="gas-img" />
+          <p class="oil-deskripsi fw-regular mt-4">
+            <strong>Dump Arm Roll</strong><br />Project PT Unknown<br />Tahun
+            2024
+          </p>
+        </div>
+        <div class="project-item">
+          <img src="img/sleeper.png" alt="Sleeper Container" class="gas-img" />
+          <p class="oil-deskripsi fw-regular mt-4">
+            <strong>Sleeper Container</strong><br />Project Sorong Papua<br />Tahun
+            2024
+          </p>
+        </div>
+        <div class="project-item">
+          <img src="img/wttank.png" alt="Water Tank" class="gas-img" />
+          <p class="oil-deskripsi fw-regular mt-4">
+            <strong>Water Tank</strong><br />Project Lamongan Jawa Timur<br />Tahun
+            2024
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="section-kontak text-center">
+      <div class="container">
+        <h2 class="title-kontak fw-medium fs-3">Info Pemesanan Hubungi Kami</h2>
+        <p class="content-kontak fw-regular">
+          <i class="fas fa-phone-alt fs-5"></i> +62 813 9822 3493 |
+          <i class="fas fa-envelope fs-5"></i> marketing@amperamandirijaya.co.id
+        </p>
+        <p class="content-kontak fw-regular py-2">
+          <i class="fas fa-map-marker-alt fs-5"></i> Workshop Location: JL. WR
+          Supratman RT.001 RW.007, Kel. Cimuning Mustikajaya, Kota Bekasi 17155
+        </p>
+        <iframe
+          src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="300"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+          class="mb-lg-5 py-3"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p class="copyright">© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // Tambahkan JavaScript untuk smooth scroll jika diinginkan
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // JavaScript untuk mendeteksi elemen yang muncul di viewport
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".slide-up");
+
+        const scrollTrigger = (element) => {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight) * 0.85
+          );
+        };
+
+        const handleScroll = () => {
+          elements.forEach((element) => {
+            if (scrollTrigger(element)) {
+              element.classList.add("show");
+            }
+          });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("load", handleScroll); // In case element is already in viewport on load
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

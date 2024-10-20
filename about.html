@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Ampera Mandiri Jaya</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Font */
+      @font-face {
+        font-family: "TT Neoris Trial Bold";
+        src: url("./TT\ Neoris\ Trial\ Bold.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Medium";
+        src: url("./TT\ Neoris\ Trial\ Medium.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Regular";
+        src: url("./TT\ Neoris\ Trial\ Regular.ttf");
+      }
+
+      #neoris-bold {
+        font-family: "TT Neoris Trial Bold";
+      }
+
+      #neoris-medium {
+        font-family: "TT Neoris Trial Medium";
+      }
+
+      #neoris-regular {
+        font-family: "TT Neoris Trial Regular";
+      }
+
+      .slide-right {
+        opacity: 0;
+        transform: translateX(-30px); /* Awal animasi, dari kiri */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-right.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+
+      /* CSS untuk Banner */
+      .banner {
+        background-image: url("img/Bg_visi.png");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        position: relative;
+      }
+
+      .title-banner {
+        color: white;
+        background: linear-gradient(
+          90deg,
+          #5975d6 0%,
+          #3a4054 50%,
+          rgba(39, 37, 37, 0.5) 80%,
+          rgba(39, 37, 37, 0) 100%
+        );
+        padding: 10px 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      @media (min-width: 768px) {
+        .title-banner {
+          padding: 10px 100px; /* Untuk layar yang lebih besar */
+        }
+      }
+
+      /* General Styles */
+      body {
+        font-family: TT Neoris Trial, sans-serif;
+        color: #333;
+      }
+
+      .about-company {
+        justify-content: space-between;
+        display: flex;
+        color: #212529;
+        background-color: white;
+        align-items: center;
+        text-align: justify;
+        background-size: cover;
+        padding: 50px 0;
+        background-repeat: no-repeat;
+        background-position: center;  
+      }
+
+      .ourlogo {
+        flex: 1;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .ourlogo img {
+        max-width: 40%;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .about-company {
+          flex-direction: column;
+        }
+
+        .ourlogo {
+          margin-top: 30px;
+        }
+      }
+
+
+      @media (max-width: 768px) {
+        .title-certificate {
+          font-size: 1.5rem;
+        }
+
+        .certificates {
+          flex-direction: column;
+        }
+
+        .certificate-item {
+          max-width: 80%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title-certificate {
+          font-size: 1.2rem;
+        }
+
+        .certificate-item p {
+          font-size: 1rem;
+        }
+      }
+
+      .about-company h2 {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      /* CSS untuk Project*/
+      .management-section {
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .management-section.dark-bg {
+        background-color: #212529;
+        color: #fff;
+      }
+
+      .management-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+      }
+
+      .management-item {
+        background: #f4f4f4;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .management-item:hover {
+        transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
+        box-shadow: 0px 10px 20px #5975d6; /* Menambahkan bayangan */
+        background-color: #f5f3f3;
+      }
+
+      /* Setting Ukuran Image */
+      .management-img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .management-deskripsi {
+        color: #212529;
+      }
+
+      /* Clients Section */
+      .clients img {
+        max-height: 200px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .clients img:hover {
+        transform: scale(1.1); /* Membesarkan gambar sedikit saat dihover */
+      }
+
+      .certificates-section {
+        background-color: #212529;
+        color: white;
+        margin-bottom: 40px;
+      }
+
+      .title-certificate {
+        font-size: 1.8rem;
+        color: white;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .certificates {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .certificate-item {
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .certificate-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .download-btn1 {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #5975d6; /* Warna hijau */
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .download-btn2 {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: #5975d6; /* Warna disesuaikan */
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+      }
+
+      .download-btn:hover {
+        background-color: #ffffff; /* Warna hijau saat hover */
+      }
+
+      .download-btn:active {
+        background-color: #ffffff; /* Warna hijau lebih gelap saat diklik */
+      }
+
+      .doc-cp {
+        margin-top: 20px;
+      }
+
+      /* Contact Section */
+      .contact p {
+        margin-bottom: 5px;
+      }
+
+      /* Ikon dalam kontak */
+      .contact i {
+        margin-right: 10px;
+        color: white; /* Warna putih untuk ikon */
+      }
+
+      /* Responsive iframe untuk Google Maps */
+      .contact iframe {
+        border: none;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #212529;
+        color: white;
+        padding: 40px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img width="70" height="70" src="img/AMJ_Logo.png" alt="" />
+        <a class="navbar-brand fw-bold ml-4" href="index.html"
+          >PT AMPERA MANDIRI JAYA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div class="title-banner">
+        <h2>Tentang Kami</h2>
+        <p class="fs-5 fw-regular">(About Us)</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-company py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 ml-lg-5 slide-right">
+            <h2 class="fw-medium">Profile Company</h2>
+            <p class="fw-regular mt-4">
+              PT Ampera Mandiri Jaya merupakan perusahaan yang bergerak dibidang
+              manufaktur industri Palm Oil dan industri Oil and Gas. Perusahaan
+              Ampera Mandiri Jaya berdiri sejak tahun 2021 kami berkomitmen
+              untuk membangun perusahaan manufaktur terpercaya dan profesional
+              pada sektor Oil and Gas dan Palm Oil di Indonesia dengan semangat
+              serta usaha yang gigih para pelopor PT Ampera Mandiri Jaya kami
+              berupaya untuk mencapai kepuasan pelanggan melalui pemenuhan
+              kebutuhan dari setiap pelanggan.
+            </p>
+          </div>
+          <div class="ourlogo">
+            <img src="img/AMJ_Logo.png" alt="Company Profile" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Management Section -->
+    <section class="management-section dark-bg">
+      <h2 class="fw-medium title-gas">Team Management of Ampera Mandiri Jaya</h2>
+      <div class="mt-lg-4 management-grid px-md-5">
+        <div class="management-item">
+          <img src="img/person1.jpg" alt="person1" class="management-img" />
+          <p class="management-deskripsi fw-regular mt-4">
+            <strong>Mr Abie</strong><br />CEO of Ampera Mandiri Jaya
+          </p>
+        </div>
+        <div class="management-item">
+          <img src="img/constructor2.jpg" alt="Person2" class="management-img" />
+          <p class="management-deskripsi fw-regular mt-4">
+            <strong>Mr Romy</strong><br />President Director
+          </p>
+        </div>
+        <div class="management-item">
+          <img src="img/constructor.jpg" alt="Person3" class="management-img" />
+          <p class="management-deskripsi fw-regular mt-4">
+            <strong>Mr Basuki</strong><br />Director
+          </p>
+        </div>
+        <div class="management-item">
+          <img src="img/person2.jpg" alt="Person4" class="management-img" />
+          <p class="management-deskripsi fw-regular mt-4">
+            <strong>Mr Subhan</strong><br />Director
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients py-5">
+      <div class="container text-center">
+        <h2 class="fw-medium mb-4">Our Value Customers</h2>
+        <!-- Row 1 -->
+        <div class="row justify-content-center">
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/PARKER.png"
+              alt="PT PARKER WELLBORE INDONESIA"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/umran.jpg"
+              alt="PT UMRAN RUBI JAYA"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/valmet.jpg"
+              alt="PT VALMET TECHNOLOGY CENTER"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="row justify-content-center">
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/lerindro_logos.png"
+              alt="PT LERINDRO INTERNASIONAL"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/Logo-SCC.png"
+              alt="PT SINAR CITRA CEMERLANG"
+              class="img-fluid py-4"
+            />
+          </div>
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/Nabire.png"
+              alt="PT NABIRE BARU"
+              class="img-fluid mt-lg-1"
+            />
+          </div>
+        </div>
+        <!-- Row 3 -->
+        <div class="row justify-content-center">
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/minamas.png"
+              alt="PT MINAMAS"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-4 px-md-5">
+            <img
+              src="img/swanindo.png"
+              alt="PT SINAR CITRA CEMERLANG"
+              class="img-fluid py-4"
+            />
+          </div>
+          <div class="col-md-4 px-md-5">
+            <img
+              height="50"
+              width="180"
+              src="img/mustika_petrotech.png"
+              alt="PT NABIRE BARU"
+              class="img-fluid m-1"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certificates-section py-5">
+      <div class="container">
+        <h1 class="title-certificate">
+          Our Certificate International Organization For Standardization (ISO)
+        </h1>
+        <div class="certificates m-4">
+          <div class="certificate-item">
+            <img src="img/9001_2015.png" alt="ISO 9001:2015" />
+            <p class="fw-medium mt-4">ISO 9001:2015</p>
+          </div>
+          <div class="certificate-item">
+            <img src="img/14001_2015.png" alt="ISO 14001:2015" />
+            <p class="fw-medium mt-4">ISO 14001:2015</p>
+          </div>
+          <div class="certificate-item">
+            <img src="img/45001_2018.png" alt="ISO 45001:2018" />
+            <p class="fw-medium mt-4">ISO 45001:2018</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="fw-medium">Info Pemesanan Hubungi Kami</h3>
+            <p class="fw-regular mt-3">
+              <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+            </p>
+            <p class="fw-regular mt-3">
+              <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+            </p>
+            <p class="fw-regular mt-3">
+              <i class="fas fa-map-marker-alt"></i> Mutiara Gading Timur 2 Blok
+              N/8D, Mustikajaya, Kota Bekasi, Jawa Barat, Indonesia 17158
+            </p>
+            <div class="doc-cp py-4">
+              <p class="fw-regular">Company Profile Palm Oil Mill</p>
+              <a href="./03 COMPANY PROFILE PT. AMJ PALM OIL MILL.pdf" download="03 COMPANY PROFILE PT. AMJ PALM OIL MILL.pdf" class="download-btn1">
+                  Unduh Dokumen PDF
+              </a>
+            </div>
+            <div class="doc-cp">
+              <p class="fw-regular">Company Profile Fabrikasi</p>
+              <a href="./COMPANY PROFILE FABRIKASI PT. Ampera Mandiri Jaya (1).pdf" download="COMPANY PROFILE FABRIKASI PT. Ampera Mandiri Jaya (1).pdf" class="download-btn2">
+                  Unduh Dokumen PDF
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 pt-5">
+            <iframe
+              src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="250"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-4">
+      <div class="container">
+        <p>© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      // Tambahkan JavaScript untuk smooth scroll jika diinginkan
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // JavaScript untuk mendeteksi elemen yang muncul di viewport
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".slide-right");
+
+        const scrollTrigger = (element) => {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight) * 0.85
+          );
+        };
+
+        const handleScroll = () => {
+          elements.forEach((element) => {
+            if (scrollTrigger(element)) {
+              element.classList.add("show");
+            }
+          });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("load", handleScroll); // In case element is already in viewport on load
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

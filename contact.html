@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT Ampera Mandiri Jaya - Contact Us</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Font */
+      @font-face {
+        font-family: "TT Neoris Trial Bold";
+        src: url("./TT\ Neoris\ Trial\ Bold.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Medium";
+        src: url("./TT\ Neoris\ Trial\ Medium.ttf");
+      }
+
+      @font-face {
+        font-family: "TT Neoris Trial Regular";
+        src: url("./TT\ Neoris\ Trial\ Regular.ttf");
+      }
+
+      #neoris-bold {
+        font-family: "TT Neoris Trial Bold";
+      }
+
+      #neoris-medium {
+        font-family: "TT Neoris Trial Medium";
+      }
+
+      #neoris-regular {
+        font-family: "TT Neoris Trial Regular";
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: TT Neoris Trial, sans-serif;
+        color: #333;
+      }
+
+      /* CSS untuk Navbar*/
+      .navbar {
+        background-color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        max-width: 100px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #212529;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+
+      .nav-links li a:hover {
+        background-color: #eee;
+        border-radius: 5px;
+      }
+
+      /* CSS untuk Banner */
+      .banner {
+        background-image: url("img/Banner_about.png");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        position: relative;
+        /* color: white;
+        text-align: center; */
+      }
+      .title-banner {
+        color: white;
+        background: linear-gradient(
+          90deg,
+          #5975d6 0%,
+          #3a4054 50%,
+          rgba(39, 37, 37, 0.5) 80%,
+          rgba(39, 37, 37, 0) 100%
+        );
+        padding: 10px 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      @media (min-width: 768px) {
+        .title-banner {
+          padding: 10px 100px; /* Untuk layar yang lebih besar */
+        }
+      }
+
+      .info-pemesanan {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #212529;
+        color: white;
+        padding: 50px 130px;
+      }
+
+      .info-content {
+        flex: 1;
+        margin-right: 30px; /* Memberi jarak antara teks dan peta */
+      }
+
+      .map {
+        width: 45%; /* Sesuaikan lebar peta */
+      }
+
+      .info-pemesanan i {
+        margin-right: 10px;
+        color: white;
+      }
+
+      /* Responsif untuk layar kecil */
+      @media only screen and (max-width: 768px) {
+        .info-pemesanan {
+          flex-direction: column; /* Stack elemen di atas satu sama lain */
+          padding: 50px 30px; /* Sesuaikan padding untuk mobile */
+        }
+
+        .map {
+          width: 100%; /* Lebar penuh untuk iframe pada layar kecil */
+          margin-top: 20px; /* Beri jarak antara teks dan iframe */
+        }
+      }
+
+      .contact-form {
+        font-family: TT Neoris Trial, sans-serif;
+        padding: 50px;
+        background-color: #f9f9f9;
+      }
+
+      .contact-form h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .contact-form p {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #000000;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <img width="70" height="70" src="img/AMJ_Logo.png" alt="" />
+        <a class="navbar-brand fw-bold ml-4" href="index.html"
+          >PT AMPERA MANDIRI JAYA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <section id="Banner_" class="banner">
+      <div class="title-banner">
+        <h2>Hubungi Kami</h2>
+        <p class="fs-5 fw-regular">(Contact Us)</p>
+      </div>
+    </section>
+
+    <section class="info-pemesanan">
+      <div class="info-content">
+        <div class="title-content">
+          <h4 class="title fw-medium">Info Pemesanan</h4>
+          <p>Silahkan hubungi kami untuk informasi lebih lanjut</p>
+        </div>
+        <div class="office pt-3 mt-lg-2">
+          <h4 class="title-ho fw-medium">Head Office</h4>
+          <p class="fw-regular">
+            Mutiara Gading Timur 2 Blok N1/8D<br />
+            Mustikajaya, Kota Bekasi, Jawa Barat<br />
+            Indonesia 17518
+          </p>
+        </div>
+        <div class="workshop">
+          <h4 class="fw-medium">Workshop</h4>
+          <p class="fw-regular">
+            Jl. WR Supratman RT.001 RW.007<br />
+            Kel. Cimuning Mustikajaya, Kota Bekasi 17518
+          </p>
+        </div>
+        <div class="fw-regular">
+          <p class="fw-regular mt-3">
+            <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+          </p>
+          <p class="fw-regular mt-3">
+            <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+          </p>
+        </div>
+      </div>
+      <div class="map p-3">
+        <iframe
+          src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="250"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="contact-form" id="contact">
+      <h2 class="fw-medium">Hubungi Kami</h2>
+      <p class="fw-regular mt-1">Kirim pesan melalui email kami</p>
+
+      <form id="contact-form">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          name="from_name"
+          placeholder="Your Name"
+          required
+        />
+
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          name="from_email"
+          placeholder="Email Address"
+          required
+        />
+
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="from_subject"
+          placeholder="Subject"
+          required
+        />
+
+        <label for="message">Type your message here</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Message"
+          required
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <p id="response-message"></p>
+
+      <!-- Tambahkan EmailJS SDK -->
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script type="text/javascript">
+        (function () {
+          emailjs.init("JQDr2VpR_0bkj-BBE"); // Masukkan User ID dari EmailJS di sini
+        })();
+
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Mengirim email melalui EmailJS
+            emailjs.sendForm("service_MJA", "template_MJA", this).then(
+              function () {
+                // Jika berhasil
+                document.getElementById("response-message").innerHTML =
+                  "Pesan terkirim! Kami akan segera menghubungi Anda.";
+              },
+              function (error) {
+                // Jika terjadi error
+                document.getElementById("response-message").innerHTML =
+                  "Gagal mengirim pesan. Coba lagi nanti.";
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      </script>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
