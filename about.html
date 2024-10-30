@@ -57,6 +57,45 @@
         transform: translateX(0);
       }
 
+      /* CSS untuk Navbar*/
+      .navbar {
+        background-color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        max-width: 100px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #212529;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+
+      .nav-links li a:hover {
+        background-color: #eee;
+        border-radius: 5px;
+      }
+
 
       /* CSS untuk Banner */
       .banner {
@@ -185,6 +224,7 @@
         padding: 10px;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
       }
 
       .management-item:hover {
@@ -197,6 +237,7 @@
       .management-img {
         width: 100%;
         height: 200px;
+        border-radius: 8px;
       }
 
       .management-deskripsi {
@@ -204,21 +245,44 @@
       }
 
       /* Clients Section */
-      .clients img {
-        max-height: 200px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-        transition: transform 0.3s ease-in-out;
+      .clients {
+        position: relative;
+        overflow: hidden;
       }
 
-      .clients img:hover {
-        transform: scale(1.1); /* Membesarkan gambar sedikit saat dihover */
+      .logos-wrapper {
+        overflow: hidden; /* Hide the overflow */
+        position: relative;
       }
 
-      .certificates-section {
+      .logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        animation: scroll 20s linear infinite;
+        padding-top: 50px;
+        padding-bottom: 5rem;
+      }
+
+      .logos img {
+        max-height: 100px; /* Set uniform height */
+        object-fit: contain; /* Maintain aspect ratio */
+        transition: filter 0.3s ease;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      
+      .certificates-section{
         background-color: #212529;
-        color: white;
-        margin-bottom: 40px;
+        color: #fff;
       }
 
       .title-certificate {
@@ -278,7 +342,7 @@
       }
 
       .download-btn:active {
-        background-color: #ffffff; /* Warna hijau lebih gelap saat diklik */
+        background-color: #ffffff; 
       }
 
       .doc-cp {
@@ -414,78 +478,22 @@
     <section class="clients py-5">
       <div class="container text-center">
         <h2 class="fw-medium mb-4">Our Value Customers</h2>
-        <!-- Row 1 -->
-        <div class="row justify-content-center">
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/PARKER.png"
-              alt="PT PARKER WELLBORE INDONESIA"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/umran.jpg"
-              alt="PT UMRAN RUBI JAYA"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/valmet.jpg"
-              alt="PT VALMET TECHNOLOGY CENTER"
-              class="img-fluid"
-            />
-          </div>
-        </div>
-        <!-- Row 2 -->
-        <div class="row justify-content-center">
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/lerindro_logos.png"
-              alt="PT LERINDRO INTERNASIONAL"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/Logo-SCC.png"
-              alt="PT SINAR CITRA CEMERLANG"
-              class="img-fluid py-4"
-            />
-          </div>
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/Nabire.png"
-              alt="PT NABIRE BARU"
-              class="img-fluid mt-lg-1"
-            />
-          </div>
-        </div>
-        <!-- Row 3 -->
-        <div class="row justify-content-center">
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/minamas.png"
-              alt="PT MINAMAS"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-4 px-md-5">
-            <img
-              src="img/swanindo.png"
-              alt="PT SINAR CITRA CEMERLANG"
-              class="img-fluid py-4"
-            />
-          </div>
-          <div class="col-md-4 px-md-5">
-            <img
-              height="50"
-              width="180"
-              src="img/mustika_petrotech.png"
-              alt="PT NABIRE BARU"
-              class="img-fluid m-1"
-            />
+        <div class="logos-wrapper">
+          <div class="logos">
+            <img src="img/PARKER.png" alt="PT PARKER WELLBORE INDONESIA" />
+            <img src="img/UMRAN.png" alt="PT UMRAN RUBI JAYA" />
+            <img src="img/VALMET.png" alt="PT VALMET TECHNOLOGY CENTER" />
+            <img src="img/LERINDRO.png" alt="PT LERINDRO INTERNASIONAL" />
+            <img src="img/SCC.png" alt="PT SINAR CITRA CEMERLANG" />
+            <img src="img/Nabire.png" alt="PT NABIRE BARU" />
+            <img src="img/MINAMAS.png" alt="PT MINAMAS" />
+            <img src="img/SWAN_ID.png" alt="PT SWANINDO" />
+            <img src="img/MPI.png" alt="PT MPI" />
+            <img src="img/PRASADHA.png" alt="PT PPLI" />
+            <img src="img/DARMEX.png" alt="PT DARMEX" />
+            <img src="img/MEWAH.png" alt="PT MEWAH" />
+            <img src="img/TCG.png" alt="PT THE CAPITOL GROUP" />
+            <img src="img/SIMP.png" alt="PT SIMP" />
           </div>
         </div>
       </div>
@@ -498,15 +506,15 @@
         </h1>
         <div class="certificates m-4">
           <div class="certificate-item">
-            <img src="img/9001_2015.png" alt="ISO 9001:2015" />
+            <img src="img/ISO 9001_2015.png" alt="ISO 9001:2015" />
             <p class="fw-medium mt-4">ISO 9001:2015</p>
           </div>
           <div class="certificate-item">
-            <img src="img/14001_2015.png" alt="ISO 14001:2015" />
+            <img src="img/ISO 14001_2015.png" alt="ISO 14001:2015" />
             <p class="fw-medium mt-4">ISO 14001:2015</p>
           </div>
           <div class="certificate-item">
-            <img src="img/45001_2018.png" alt="ISO 45001:2018" />
+            <img src="img/ISO 45001_2018.png" alt="ISO 45001:2018" />
             <p class="fw-medium mt-4">ISO 45001:2018</p>
           </div>
         </div>
@@ -526,8 +534,7 @@
               <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
             </p>
             <p class="fw-regular mt-3">
-              <i class="fas fa-map-marker-alt"></i> Mutiara Gading Timur 2 Blok
-              N/8D, Mustikajaya, Kota Bekasi, Jawa Barat, Indonesia 17158
+              <i class="fas fa-map-marker-alt"></i> JL. WR Supratman RT.001 RW.007<br> Kel. Cimuning Mustikajaya, Kota Bekasi 17155
             </p>
             <div class="doc-cp py-4">
               <p class="fw-regular">Company Profile Palm Oil Mill</p>
@@ -544,7 +551,7 @@
           </div>
           <div class="col-md-6 pt-5">
             <iframe
-              src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
               width="100%"
               height="250"
               frameborder="0"

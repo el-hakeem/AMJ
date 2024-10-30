@@ -148,48 +148,27 @@
         text-align: center;
       }
 
-      .project-section.dark-bg {
-        background-color: #212529;
-        color: #fff;
-      }
-
       .project-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(
+          3,
+          1fr
+        ); /* Menampilkan 3 card dalam satu baris */
         gap: 20px;
-        padding: 30px 20px;
+        padding: 0 10%; /* Menambahkan jarak dari sisi kanan dan kiri untuk desktop */
       }
-
-      /* .grid-other {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 40px 20px;
-      } */
 
       .project-palm {
         background: #f4f4f4;
         padding: 10px;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
       }
 
       .project-palm:hover {
-        transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
+        transform: translateY(-6px); /* Mengangkat div sedikit ke atas */
         box-shadow: 0px 10px 20px #212529; /* Menambahkan bayangan */
-        background-color: #f5f3f3;
-      }
-
-      .project-item {
-        background: #f4f4f4;
-        padding: 10px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .project-item:hover {
-        transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
-        box-shadow: 0px 10px 20px #5975d6; /* Menambahkan bayangan */
         background-color: #f5f3f3;
       }
 
@@ -197,18 +176,47 @@
       .palm-img {
         width: 100%;
         height: 200px;
+        border-radius: 8px;
       }
 
+      /* Responsivitas untuk perangkat yang lebih kecil */
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: 1fr; /* Tampilkan satu card per baris pada perangkat kecil */
+          padding: 0 5%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .project-grid {
+          padding: 0 15%; /* Menambah padding di desktop agar lebih simetris */
+        }
+      }
+
+      .project-section.dark-bg {
+        background-color: #212529;
+        color: #fff;
+      }
+
+      .project-oil {
+        background: #f4f4f4;
+        padding: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .project-oil:hover {
+        transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
+        box-shadow: 0px 10px 20px #5975d6; /* Menambahkan bayangan */
+        background-color: #f5f3f3;
+      }
+
+      /* Setting Ukuran Image */
       .gas-img {
         width: 100%;
         height: 200px;
-      }
-      .other-img {
-        width: 55%;
-        height: 200px;
-        border-radius: 10px;
-        /* max-width: 1200px;
-        margin: 0 auto; */
+        border-radius: 8px;
       }
 
       .oil-deskripsi {
@@ -321,20 +329,19 @@
 
     <!-- Palm Oil Project Section -->
     <section class="project-section">
-      <h2 class="fw-medium title-oil m-3">Palm Oil Project</h2>
+      <h2 class="fw-medium title-oil m-3">Palm Oil Mill Project</h2>
       <div class="mt-lg-4 project-grid slide-up">
         <div class="project-palm">
           <img src="img/airlock.png" alt="Air Lock Destoner" class="palm-img" />
           <p class="fw-regular mt-4">
             <strong>Air Lock Destoner</strong><br />Project Kalimantan Barat dan
-            Papua Nabire<br />Tahun 2024
+            Nabire
           </p>
         </div>
         <div class="project-palm">
           <img src="img/thresher1.png" alt="Thresher Drum" class="palm-img" />
           <p class="fw-regular mt-4">
-            <strong>Thresher Drum</strong><br />Project Kalimantan Tengah<br />Tahun
-            2024
+            <strong>Thresher Drum</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
@@ -345,7 +352,7 @@
           />
           <p class="fw-regular mt-4">
             <strong>FBB Recycling Conveyor</strong><br />Project Kalimantan
-            Tengah<br />Tahun 2024
+            Tengah
           </p>
         </div>
         <div class="project-palm">
@@ -356,7 +363,43 @@
           />
           <p class="fw-regular mt-4">
             <strong>Empty Bunch Press Conveyor</strong><br />Project Kalimantan
-            Tengah<br />Tahun 2024
+            Tengah
+          </p>
+        </div>
+        <div class="project-palm">
+          <img
+            src="img/Scrapper_FBB.png"
+            alt="Scrapper Conveyor"
+            class="palm-img"
+          />
+          <p class="fw-regular mt-4">
+            <strong>Scrapper FBB Conveyor</strong><br />Project Kalimantan Barat
+            dan Nabire
+          </p>
+        </div>
+        <div class="project-palm">
+          <img src="img/chimney.jpg" alt="Chimney" class="palm-img" />
+          <p class="fw-regular mt-4">
+            <strong>Chimney Boiler</strong><br />Project Kalimantan Tengah
+          </p>
+        </div>
+        <div class="project-palm">
+          <img src="img/produk_x.jpg" alt="Produk X" class="palm-img" />
+          <p class="fw-regular mt-4">
+            <strong>Proyek X</strong><br />Project Kalimantan Tengah
+          </p>
+        </div>
+        <div class="project-palm">
+          <img src="img/Cation.png" alt="Anion" class="palm-img" />
+          <p class="fw-regular mt-4">
+            <strong>Anion & Caution</strong><br />Project Kalimantan Tengah
+          </p>
+        </div>
+        <div class="project-palm">
+          <img src="img/settling3.png" alt="Settling" class="palm-img" />
+          <p class="fw-regular mt-4">
+            <strong>Continuous Settling Tank</strong><br />Project Kalimantan
+            Tengah
           </p>
         </div>
       </div>
@@ -366,32 +409,40 @@
     <section class="project-section dark-bg">
       <h2 class="fw-medium title-gas">Oil and Gas Project</h2>
       <div class="mt-lg-4 project-grid slide-up">
-        <div class="project-item">
-          <img src="img/mud_tank.png" alt="MUD Tank" class="gas-img" />
+        <div class="project-oil">
+          <img src="img/MUD.png" alt="MUD Tank" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>MUD Tank</strong><br />Project PT Umran Rubi Jaya<br />Tahun
-            2024
+            <strong>MUD Tank</strong><br />Project PT Umran Rubi Jaya
           </p>
         </div>
-        <div class="project-item">
-          <img src="img/dump_roll.png" alt="Dump Arm Roll" class="gas-img" />
+        <div class="project-oil">
+          <img src="img/dump_roll.jpg" alt="Dump Arm Roll" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Dump Arm Roll</strong><br />Project PT Unknown<br />Tahun
-            2024
+            <strong>Dump Arm Roll</strong><br />Project PT Unknown
           </p>
         </div>
-        <div class="project-item">
+        <div class="project-oil">
           <img src="img/sleeper.png" alt="Sleeper Container" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Sleeper Container</strong><br />Project Sorong Papua<br />Tahun
-            2024
+            <strong>Sleeper Container</strong><br />Project Sorong Papua
           </p>
         </div>
-        <div class="project-item">
+        <div class="project-oil">
           <img src="img/wttank.png" alt="Water Tank" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Water Tank</strong><br />Project Lamongan Jawa Timur<br />Tahun
-            2024
+            <strong>Water Tank</strong><br />Project Lamongan Jawa Timur
+          </p>
+        </div>
+        <div class="project-oil">
+          <img src="img/Roof Pump.png" alt="Roof Pump" class="gas-img" />
+          <p class="oil-deskripsi fw-regular mt-4">
+            <strong>Roof Shelter Pump</strong><br />Project Project Unknown
+          </p>
+        </div>
+        <div class="project-oil">
+          <img src="img/SKID.png" alt="Roof Pump" class="gas-img" />
+          <p class="oil-deskripsi fw-regular mt-4">
+            <strong>SKID Compressor</strong><br />Project Unknown
           </p>
         </div>
       </div>
@@ -410,7 +461,7 @@
           Supratman RT.001 RW.007, Kel. Cimuning Mustikajaya, Kota Bekasi 17155
         </p>
         <iframe
-          src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
           width="100%"
           height="300"
           frameborder="0"

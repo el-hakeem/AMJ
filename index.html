@@ -17,46 +17,61 @@
       /* Font CSS */
       @font-face {
         font-family: "TT Neoris Trial Bold";
-        src: url("./TT\ Neoris\ Trial\ Bold.ttf");
+        src: url("./TT Neoris Trial Bold.ttf");
       }
 
       @font-face {
         font-family: "TT Neoris Trial Medium";
-        src: url("./TT\ Neoris\ Trial\ Medium.ttf");
+        src: url("./TT Neoris Trial Medium.ttf");
       }
 
       @font-face {
         font-family: "TT Neoris Trial Regular";
-        src: url("./TT\ Neoris\ Trial\ Regular.ttf");
-      }
-
-      #neoris-bold {
-        font-family: "TT Neoris Trial Bold";
-      }
-
-      #neoris-medium {
-        font-family: "TT Neoris Trial Medium";
-      }
-
-      #neoris-regular {
-        font-family: "TT Neoris Trial Regular";
-      }
-
-      /* CSS untuk efek slide up */
-      .slide-up {
-        opacity: 0;
-        transform: translateY(30px); /* Awal animasi, turun 30px */
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-
-      .slide-up.show {
-        opacity: 1;
-        transform: translateY(0); /* Akhir animasi, di posisi aslinya */
+        src: url("./TT Neoris Trial Regular.ttf");
       }
 
       body {
         font-family: TT Neoris Trial, sans-serif;
         color: #333;
+      }
+
+      /* CSS untuk Navbar*/
+      .navbar {
+        background-color: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        max-width: 100px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #212529;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+
+      .nav-links li a:hover {
+        background-color: #eee;
+        border-radius: 5px;
       }
 
       /* CSS untuk Banner */
@@ -70,7 +85,7 @@
         align-items: center;
         color: white;
         text-align: justify;
-        /* padding: 80px; */
+        padding: 20px; /* Added padding for better spacing */
       }
 
       /* CSS untuk About */
@@ -111,7 +126,7 @@
         margin-top: 20px;
       }
 
-      /* CSS untuk Service*/
+      /* CSS untuk Service */
       .title-services {
         padding: 20px;
         margin-top: 30px;
@@ -121,14 +136,10 @@
       }
 
       .service-section {
-        padding: 50px 0;
+        padding: 50px 15px; /* Added horizontal padding for small screens */
         text-align: center;
       }
 
-      .service-section.dark-bg {
-        background-color: #212529;
-        color: #fff;
-      }
       .container-services {
         background-image: url(img/Bg_visi.png);
         background-size: cover;
@@ -148,13 +159,18 @@
         color: #212529;
         padding: 10px;
         text-align: center;
-        height: 80%;
-        margin: 50px;
+        margin: 10px; /* Adjusted for smaller margins */
         transition: transform 0.3s ease, box-shadow 0.3s ease,
           background-color 0.3s ease;
+        border-radius: 15px;
       }
 
-      .service-item:hover {
+      .service-item img {
+        width: 50%;
+        height: auto; /* Change to auto to maintain aspect ratio */
+      }
+
+       .service-item:hover {
         transform: translateY(-10px); /* Mengangkat sedikit elemen */
         box-shadow: 0 4px 8px #5975d6; /* Tambahkan bayangan */
         background-color: #f8f9fa; /* Ubah warna background saat hover */
@@ -169,15 +185,9 @@
         color: #007bff; /* Ubah warna ikon saat hover */
       }
 
-      /* Setting Ukuran Image */
-      .service-item img {
-        width: 50%;
-        height: 70%;
-      }
-
       /* CSS untuk visi */
       .section-visi {
-        padding: 60px 0;
+        padding: 60px 15px; /* Added horizontal padding for small screens */
         color: white;
         background-image: url(img/Bg_visi2.png);
         background-color: #f8f9fa;
@@ -186,13 +196,9 @@
         background-repeat: no-repeat;
       }
 
-      .visi-misi {
-        text-align: center;
-        padding: 20px 0;
-      }
-
       /* CSS untuk Project */
       .section-project {
+        padding: 20px 15px; /* Added horizontal padding for small screens */
         color: white;
         align-items: center;
       }
@@ -201,19 +207,25 @@
         padding: 50px 0;
         margin-bottom: 20px;
         color: #212529;
+        border-radius: 15px;
       }
 
       .project-img {
-        margin: 20px 0;
+        padding: 10px;
         width: 100%;
         height: 200px;
         object-fit: cover;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 15px;
       }
 
-      .project-img:hover {
-        transform: scale(1.1); /* Memperbesar gambar sedikit */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Memberikan bayangan */
+      .card {
+        transition: transform 0.3s, box-shadow 0.3s; /* Transisi halus */
+      }
+
+      .card:hover {
+        transform: translateY(-10px); /* Mengangkat sedikit elemen */
+        box-shadow: 0 4px 8px #212529; /* Tambahkan bayangan */
+        background-color: #f8f9fa; /* Ubah warna background saat hover */
       }
 
       /* CSS untuk Kontak */
@@ -224,13 +236,27 @@
         text-align: center;
       }
 
-      .title-kontak {
-        padding: 30px 0;
+      .slide-right {
+        opacity: 0;
+        transform: translateX(-30px); /* Awal animasi, dari kiri */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
 
-      .content-kontak {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
+      .slide-right.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* CSS untuk efek slide up */
+      .slide-up {
+        opacity: 0;
+        transform: translateY(30px); /* Awal animasi, turun 30px */
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .slide-up.show {
+        opacity: 1;
+        transform: translateY(0); /* Akhir animasi, di posisi aslinya */
       }
 
       /* CSS untuk Footer */
@@ -297,11 +323,11 @@
     <!-- Tentang Kami Section -->
     <section id="about_" class="about-company py-5">
       <div class="container">
-        <div class="row">
+        <div class="row slide-right">
           <div class="col-lg-6 ml-lg-5">
             <h2 class="fw-medium">Profile Company</h2>
             <p class="fw-regular mt-4">
-              PT Ampera Mandiri Jaya merupakan perusahaan yang bergerak dibidang
+              PT Ampera Mandiri Jaya merupakan perusahaan yang bergerak di bidang
               manufaktur industri Palm Oil dan industri Oil and Gas. Kami
               memiliki pengalaman dalam pembuatan peralatan yang dibutuhkan
               dalam proses pengolahan kelapa sawit sesuai permintaan customer
@@ -336,42 +362,40 @@
 
     <!-- Project Kami Section -->
     <section id="project_" class="section-project text-center slide-up">
-      <div class="project-container">
-        <h2 class="fw-medium">Preview Project</h2>
+      <div class="project-container py-2">  
+        <h2 class="fw-medium py-4 pb-4">Preview Project</h2>
         <div class="row">
-          <div class="col-md-3">
-            <img
-              src="img/mud_tank.png"
-              alt="Project 1"
-              class="project-img mt-lg-5"
-            />
-            <p class="fw-medium mt-3">MUD Tank - Project PT Umran Rubi Jaya</p>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card">
+              <img src="img/mud_tank.png" alt="Project 1" class="project-img card-img-top" />
+              <div class="card-body">
+                <p class="fw-medium">MUD Tank <br> PT Umran Rubi Jaya</p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3">
-            <img
-              src="img/airlock.png"
-              alt="Project 2"
-              class="project-img mt-lg-5"
-            />
-            <p class="fw-medium mt-3">
-              Airlock Destoner - Project Kalimantan Barat & Papua Nabire
-            </p>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card">
+              <img src="img/airlock.png" alt="Project 2" class="project-img card-img-top" />
+              <div class="card-body">
+                <p class="fw-medium">Airlock Destoner <br> Project Kalimantan Barat & Nabire</p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3">
-            <img
-              src="img/thresher1.png"
-              alt="Project 3"
-              class="project-img mt-lg-5"
-            />
-            <p class="fw-medium mt-3">
-              Thresher Drum - Project Kalimantan Tengah
-            </p>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card">
+              <img src="img/thresher1.png" alt="Project 3" class="project-img card-img-top" />
+              <div class="card-body">
+                <p class="fw-medium">Thresher Drum <br> Project Kalimantan Tengah</p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3">
-            <img src="img/wttank.png" alt="Project 4" class="project-img mt-lg-5" />
-            <p class="fw-medium mt-3">
-              Water Tank - Project Lamongan Jawa Timur
-            </p>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card">
+              <img src="img/wttank.png" alt="Project 4" class="project-img card-img-top" />
+              <div class="card-body">
+                <p class="fw-medium">Water Tank <br> Project Lamongan Jawa Timur</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -381,7 +405,7 @@
     <section class="service-section">
       <div class="container-services">
         <h2 class="title-services">Our Services</h2>
-        <div class="mt-4 project-grid">
+        <div class="service-grid">
           <div class="service-item py-5">
             <i class="fa-solid fa-toolbox fa-5x my-3"></i>
             <h2 class="fs-3 mt-2">Oil Tools Fabrication</h2>
@@ -391,8 +415,6 @@
               oleh pelanggan.
             </p>
           </div>
-        </div>
-        <div class="mt-4 project-grid">
           <div class="service-item py-5">
             <i class="fas fa-tools fa-5x my-3"></i>
             <h2 class="fs-3 mt-2">Repair Services</h2>
@@ -402,8 +424,6 @@
               diinginkan.
             </p>
           </div>
-        </div>
-        <div class="mt-4 project-grid">
           <div class="service-item py-5">
             <i class="fa-regular fa-handshake fa-5x my-3"></i>
             <h2 class="fs-3 mt-2">General Supply</h2>
@@ -421,7 +441,7 @@
     <!-- Kontak Section -->
     <section class="section-kontak text-center">
       <div class="container">
-        <h2 class="title-kontak fw-medium fs-3">Info Pemesanan Hubungi Kami</h2>
+        <h2 class="title-kontak fw-medium fs-3 py-5">Info Pemesanan Hubungi Kami</h2>
         <p class="content-kontak fw-regular">
           <i class="fas fa-phone-alt fs-5"></i> +62 813 9822 3493 |
           <i class="fas fa-envelope fs-5"></i> marketing@amperamandirijaya.co.id
@@ -431,7 +451,7 @@
           Supratman RT.001 RW.007, Kel. Cimuning Mustikajaya, Kota Bekasi 17155
         </p>
         <iframe
-          src="https://maps.google.com/maps?q=PT%20Ampera%20Mandiri%20Jaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
           width="100%"
           height="300"
           frameborder="0"
@@ -462,7 +482,7 @@
 
       // JavaScript untuk mendeteksi elemen yang muncul di viewport
       document.addEventListener("DOMContentLoaded", function () {
-        const elements = document.querySelectorAll(".slide-up");
+        const elements = document.querySelectorAll(".slide-up, .slide-right");
 
         const scrollTrigger = (element) => {
           const rect = element.getBoundingClientRect();
