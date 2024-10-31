@@ -110,7 +110,7 @@
 
       /* CSS untuk Banner */
       .banner {
-        background-image: url("img/Bg_visi.png");
+        background-image: url("img/bg-proyek.jpg");
         background-size: cover;
         background-position: center;
         height: 60vh;
@@ -118,8 +118,6 @@
         justify-content: flex-start;
         align-items: flex-end;
         position: relative;
-        /* color: white;
-        text-align: center; */
       }
       .title-banner {
         color: white;
@@ -142,10 +140,11 @@
         }
       }
 
-      /* CSS untuk Project*/
+      /* CSS untuk Project */
       .project-section {
         padding: 50px 0;
         text-align: center;
+        background-color: #f9f9f9; /* Warna latar belakang keseluruhan yang netral */
       }
 
       .project-grid {
@@ -159,20 +158,20 @@
       }
 
       .project-palm {
-        background: #f4f4f4;
+        background: #ffffff; /* Latar belakang putih */
+        border: 2px solid #212529; /* Garis tepi berwarna biru */
         padding: 10px;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border-radius: 8px;
+        color: #212529; /* Warna teks abu tua untuk kontras */
       }
 
       .project-palm:hover {
         transform: translateY(-6px); /* Mengangkat div sedikit ke atas */
-        box-shadow: 0px 10px 20px #212529; /* Menambahkan bayangan */
-        background-color: #f5f3f3;
+        box-shadow: 0px 10px 20px #5975d6; /* Bayangan halus untuk efek hover */
       }
 
-      /* Setting Ukuran Image */
       .palm-img {
         width: 100%;
         height: 200px;
@@ -193,9 +192,22 @@
         }
       }
 
-      .project-section.dark-bg {
+      p.palm-deskripsi {
+        color: #333333; /* Warna teks abu gelap untuk kontras dengan latar belakang putih */
+        font-weight: 400;
+        font-size: 1rem;
+      }
+
+      p.palm-deskripsi strong {
+        color: #212529; /* Warna judul sedikit lebih gelap */
+        font-weight: 600;
+      }
+
+      .dark-bg {
+        padding: 50px 0;
         background-color: #212529;
         color: #fff;
+        text-align: center;
       }
 
       .project-oil {
@@ -333,14 +345,14 @@
       <div class="mt-lg-4 project-grid slide-up">
         <div class="project-palm">
           <img src="img/airlock.png" alt="Air Lock Destoner" class="palm-img" />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Air Lock Destoner</strong><br />Project Kalimantan Barat dan
             Nabire
           </p>
         </div>
         <div class="project-palm">
           <img src="img/thresher1.png" alt="Thresher Drum" class="palm-img" />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Thresher Drum</strong><br />Project Kalimantan Tengah
           </p>
         </div>
@@ -350,7 +362,7 @@
             alt="FBB Recycling Conveyor"
             class="palm-img"
           />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>FBB Recycling Conveyor</strong><br />Project Kalimantan
             Tengah
           </p>
@@ -361,7 +373,7 @@
             alt="Empty Bunch Press Conveyor"
             class="palm-img"
           />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Empty Bunch Press Conveyor</strong><br />Project Kalimantan
             Tengah
           </p>
@@ -372,32 +384,32 @@
             alt="Scrapper Conveyor"
             class="palm-img"
           />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Scrapper FBB Conveyor</strong><br />Project Kalimantan Barat
             dan Nabire
           </p>
         </div>
         <div class="project-palm">
           <img src="img/chimney.jpg" alt="Chimney" class="palm-img" />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Chimney Boiler</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/produk_x.jpg" alt="Produk X" class="palm-img" />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Proyek X</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/Cation.png" alt="Anion" class="palm-img" />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Anion & Caution</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/settling3.png" alt="Settling" class="palm-img" />
-          <p class="fw-regular mt-4">
+          <p class="palm-deskripsi fw-regular mt-4">
             <strong>Continuous Settling Tank</strong><br />Project Kalimantan
             Tengah
           </p>
@@ -406,7 +418,7 @@
     </section>
 
     <!-- Oil and Gas Project Section -->
-    <section class="project-section dark-bg">
+    <section class="dark-bg">
       <h2 class="fw-medium title-gas">Oil and Gas Project</h2>
       <div class="mt-lg-4 project-grid slide-up">
         <div class="project-oil">
