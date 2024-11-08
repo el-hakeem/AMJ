@@ -59,7 +59,7 @@
 
       /* CSS untuk Navbar*/
       .navbar {
-        background-color: #fff;
+        background-color: #f0f0f0;
         padding: 10px 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         position: sticky;
@@ -169,7 +169,7 @@
       .contact-form {
         font-family: TT Neoris Trial, sans-serif;
         padding: 50px;
-        background-color: #f9f9f9;
+        background-color: #f0f0f0;
       }
 
       .contact-form h2 {
@@ -205,7 +205,7 @@
       form button {
         width: 100%;
         padding: 10px;
-        background-color: #333;
+        background-color: #141313;
         color: white;
         border: none;
         border-radius: 5px;
@@ -219,7 +219,7 @@
       footer {
         text-align: center;
         padding: 20px;
-        background-color: #333;
+        background-color: #212529;
         color: white;
       }
     </style>
@@ -333,6 +333,7 @@
                 // Jika berhasil
                 document.getElementById("response-message").innerHTML =
                   "Pesan terkirim! Kami akan segera menghubungi Anda.";
+                document.getElementById("contact-form").reset(); // Mereset form
               },
               function (error) {
                 // Jika terjadi error

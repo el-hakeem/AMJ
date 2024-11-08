@@ -158,24 +158,21 @@
       }
 
       .project-palm {
-        background: #ffffff; /* Latar belakang putih */
-        border: 2px solid #212529; /* Garis tepi berwarna biru */
-        padding: 10px;
+        background: #f0f0f0; /* Latar belakang putih */
+        border: none; /* Garis tepi berwarna biru */
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 8px;
         color: #212529; /* Warna teks abu tua untuk kontras */
       }
 
       .project-palm:hover {
         transform: translateY(-6px); /* Mengangkat div sedikit ke atas */
-        box-shadow: 0px 10px 20px #5975d6; /* Bayangan halus untuk efek hover */
+        box-shadow: 0px 5px 5px #928734; /* Bayangan halus untuk efek hover */
       }
 
       .palm-img {
         width: 100%;
         height: 200px;
-        border-radius: 8px;
       }
 
       /* Responsivitas untuk perangkat yang lebih kecil */
@@ -193,14 +190,9 @@
       }
 
       p.palm-deskripsi {
-        color: #333333; /* Warna teks abu gelap untuk kontras dengan latar belakang putih */
+        color: #212529; /* Warna teks abu gelap untuk kontras dengan latar belakang putih */
         font-weight: 400;
         font-size: 1rem;
-      }
-
-      p.palm-deskripsi strong {
-        color: #212529; /* Warna judul sedikit lebih gelap */
-        font-weight: 600;
       }
 
       .dark-bg {
@@ -211,16 +203,14 @@
       }
 
       .project-oil {
-        background: #f4f4f4;
-        padding: 10px;
+        background: #f0f0f0;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 8px;
       }
 
       .project-oil:hover {
         transform: translateY(-10px); /* Mengangkat div sedikit ke atas */
-        box-shadow: 0px 10px 20px #5975d6; /* Menambahkan bayangan */
+        box-shadow: 0px 5px 5px #928734; /* Menambahkan bayangan */
         background-color: #f5f3f3;
       }
 
@@ -228,46 +218,53 @@
       .gas-img {
         width: 100%;
         height: 200px;
-        border-radius: 8px;
       }
 
       .oil-deskripsi {
         color: #212529;
       }
 
-      /* CSS untuk Kontak */
-      .section-kontak {
+      .info-pemesanan {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
         background-color: #212529;
-        align-items: center;
         color: white;
-        text-align: center;
+        padding: 50px 130px;
       }
 
-      .title-kontak {
-        padding: 30px 0;
+      .info-content {
+        flex: 1;
+        margin-right: 30px; /* Memberi jarak antara teks dan peta */
       }
 
-      .content-kontak {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
+      .map {
+        width: 45%; /* Sesuaikan lebar peta */
       }
 
-      /* CSS untuk Footer*/
+      .info-pemesanan i {
+        margin-right: 10px;
+        color: white;
+      }
+
+      /* Responsif untuk layar kecil */
+      @media only screen and (max-width: 768px) {
+        .info-pemesanan {
+          flex-direction: column; /* Stack elemen di atas satu sama lain */
+          padding: 50px 30px; /* Sesuaikan padding untuk mobile */
+        }
+
+        .map {
+          width: 100%; /* Lebar penuh untuk iframe pada layar kecil */
+          margin-top: 20px; /* Beri jarak antara teks dan iframe */
+        }
+      }
+
       footer {
-        background-color: #212529;
-        color: #fff;
-        padding: 30px 0;
         text-align: center;
-      }
-
-      .footer-content {
-        margin-bottom: 20px;
-      }
-
-      #map {
-        height: 200px;
-        width: 100%;
-        background: url("map.png") no-repeat center center/cover;
+        padding: 20px;
+        background-color: #212529;
+        color: white;
       }
 
       /* Responsive Design */
@@ -346,14 +343,13 @@
         <div class="project-palm">
           <img src="img/airlock.png" alt="Air Lock Destoner" class="palm-img" />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Air Lock Destoner</strong><br />Project Kalimantan Barat dan
-            Nabire
+            <strong>AIRLOCK DESTONER</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/thresher1.png" alt="Thresher Drum" class="palm-img" />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Thresher Drum</strong><br />Project Kalimantan Tengah
+            <strong>THRESHER DRUM</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
@@ -363,7 +359,7 @@
             class="palm-img"
           />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>FBB Recycling Conveyor</strong><br />Project Kalimantan
+            <strong>FFB RECYCLING CONVEYOR</strong><br />Project Kalimantan
             Tengah
           </p>
         </div>
@@ -374,7 +370,7 @@
             class="palm-img"
           />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Empty Bunch Press Conveyor</strong><br />Project Kalimantan
+            <strong>EMPTY BUNCH PRESS CONVEYOR</strong><br />Project Kalimantan
             Tengah
           </p>
         </div>
@@ -385,32 +381,32 @@
             class="palm-img"
           />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Scrapper FBB Conveyor</strong><br />Project Kalimantan Barat
+            <strong>SCRAPPER FFB CONVEYOR</strong><br />Project Kalimantan Barat
             dan Nabire
           </p>
         </div>
         <div class="project-palm">
           <img src="img/chimney.jpg" alt="Chimney" class="palm-img" />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Chimney Boiler</strong><br />Project Kalimantan Tengah
+            <strong>CHIMNEY BOILER</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/produk_x.jpg" alt="Produk X" class="palm-img" />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Proyek X</strong><br />Project Kalimantan Tengah
+            <strong>PROYEK X</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/Cation.png" alt="Anion" class="palm-img" />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Anion & Caution</strong><br />Project Kalimantan Tengah
+            <strong>ANION & CAUTION</strong><br />Project Kalimantan Tengah
           </p>
         </div>
         <div class="project-palm">
           <img src="img/settling3.png" alt="Settling" class="palm-img" />
           <p class="palm-deskripsi fw-regular mt-4">
-            <strong>Continuous Settling Tank</strong><br />Project Kalimantan
+            <strong>CONTINUOUS SETTLING TANK</strong><br />Project Kalimantan
             Tengah
           </p>
         </div>
@@ -424,69 +420,86 @@
         <div class="project-oil">
           <img src="img/MUD.png" alt="MUD Tank" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>MUD Tank</strong><br />Project PT Umran Rubi Jaya
+            <strong>MUD TANK</strong><br />Project PT Umran Rubi Jaya
           </p>
         </div>
         <div class="project-oil">
           <img src="img/dump_roll.jpg" alt="Dump Arm Roll" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Dump Arm Roll</strong><br />Project PT Unknown
+            <strong>DUMP ARM ROLL</strong><br />Project PT Unknown
           </p>
         </div>
         <div class="project-oil">
           <img src="img/sleeper.png" alt="Sleeper Container" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Sleeper Container</strong><br />Project Sorong Papua
+            <strong>SLEEPER CONTAINER</strong><br />Project Sorong Papua
           </p>
         </div>
         <div class="project-oil">
           <img src="img/wttank.png" alt="Water Tank" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Water Tank</strong><br />Project Lamongan Jawa Timur
+            <strong>WATER TANK</strong><br />Project Lamongan Jawa Timur
           </p>
         </div>
         <div class="project-oil">
           <img src="img/Roof Pump.png" alt="Roof Pump" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>Roof Shelter Pump</strong><br />Project Project Unknown
+            <strong>ROOF SHELTER PUMP</strong><br />Project Project Unknown
           </p>
         </div>
         <div class="project-oil">
           <img src="img/SKID.png" alt="Roof Pump" class="gas-img" />
           <p class="oil-deskripsi fw-regular mt-4">
-            <strong>SKID Compressor</strong><br />Project Unknown
+            <strong>SKID COMPRESSOR</strong><br />Project Unknown
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Kontak Section -->
-    <section class="section-kontak text-center">
-      <div class="container">
-        <h2 class="title-kontak fw-medium fs-3">Info Pemesanan Hubungi Kami</h2>
-        <p class="content-kontak fw-regular">
-          <i class="fas fa-phone-alt fs-5"></i> +62 813 9822 3493 |
-          <i class="fas fa-envelope fs-5"></i> marketing@amperamandirijaya.co.id
-        </p>
-        <p class="content-kontak fw-regular py-2">
-          <i class="fas fa-map-marker-alt fs-5"></i> Workshop Location: JL. WR
-          Supratman RT.001 RW.007, Kel. Cimuning Mustikajaya, Kota Bekasi 17155
-        </p>
+    <section class="info-pemesanan">
+      <div class="info-content">
+        <div class="title-content">
+          <h4 class="title fw-medium">Info Pemesanan</h4>
+          <p>Silahkan hubungi kami untuk informasi lebih lanjut</p>
+        </div>
+        <div class="office pt-3 mt-lg-2">
+          <h4 class="title-ho fw-medium">Head Office</h4>
+          <p class="fw-regular">
+            Mutiara Gading Timur 2 Blok N1/8D<br />
+            Mustikajaya, Kota Bekasi, Jawa Barat<br />
+            Indonesia 17518
+          </p>
+        </div>
+        <div class="workshop">
+          <h4 class="fw-medium">Workshop</h4>
+          <p class="fw-regular">
+            Jl. WR Supratman RT.001 RW.007<br />
+            Kel. Cimuning Mustikajaya, Kota Bekasi 17518
+          </p>
+        </div>
+        <div class="fw-regular">
+          <p class="fw-regular mt-3">
+            <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+          </p>
+          <p class="fw-regular mt-3">
+            <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+          </p>
+        </div>
+      </div>
+      <div class="map col-md-6 pt-5">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
           width="100%"
-          height="300"
+          height="250"
           frameborder="0"
           style="border: 0"
           allowfullscreen=""
-          class="mb-lg-5 py-3"
         ></iframe>
       </div>
     </section>
 
-    <!-- Footer Section -->
     <footer>
-      <p class="copyright">© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+      <p>&copy; 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
     </footer>
 
     <script>
