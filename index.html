@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PT Ampera Mandiri Jaya</title>
+    <title data-translate="page_title">PT Ampera Mandiri Jaya</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -38,14 +38,14 @@
       /* CSS untuk Navbar*/
       .navbar {
         background-color: #f0f0f0;
-        padding: 10px ;
+        padding: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         position: sticky;
         top: 0;
         width: 100%;
         z-index: 1000;
       }
-      .navbar-brand{
+      .navbar-brand {
         margin-left: 20px;
       }
 
@@ -138,7 +138,8 @@
         font-weight: medium;
       }
 
-      .service-section { /* Added horizontal padding for small screens */
+      .service-section {
+        /* Added horizontal padding for small screens */
         text-align: center;
       }
 
@@ -163,7 +164,7 @@
         text-align: center;
         margin: 10px; /* Adjusted for smaller margins */
         transition: transform 0.3s ease, box-shadow 0.3s ease,
-        background-color 0.3s ease;
+          background-color 0.3s ease;
         border-radius: 15px;
       }
 
@@ -172,7 +173,7 @@
         height: auto; /* Change to auto to maintain aspect ratio */
       }
 
-       .service-item:hover {
+      .service-item:hover {
         transform: translateY(-10px); /* Mengangkat sedikit elemen */
         box-shadow: 0 4px 8px #5975d6; /* Tambahkan bayangan */
         background-color: #f8f9fa; /* Ubah warna background saat hover */
@@ -308,7 +309,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <img width="70" height="70" src="img/AMJ_Logo.png" alt="" />
-        <a class="navbar-brand fw-bold" href="index.html"
+        <a
+          class="navbar-brand fw-bold"
+          href="index.html"
+          data-translate="navbar_brand"
           >PT AMPERA MANDIRI JAYA</a
         >
         <button
@@ -325,17 +329,38 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+              <a
+                class="nav-link fw-medium"
+                href="about.html"
+                data-translate="nav_about"
+                >Tentang</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+              <a
+                class="nav-link fw-medium"
+                href="project.html"
+                data-translate="nav_project"
+                >Proyek</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+              <a
+                class="nav-link fw-medium"
+                href="services.html"
+                data-translate="nav_services"
+                >Layanan</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+              <a
+                class="nav-link fw-medium"
+                href="contact.html"
+                data-translate="nav_contact"
+                >Hubungi Kami</a
+              >
             </li>
+            <button id="language-switcher" data-lang="en">EN</button>
           </ul>
         </div>
       </div>
@@ -344,8 +369,10 @@
     <!-- Banner -->
     <section id="Banner_" class="banner">
       <div class="container">
-        <p class="fs-1 fw-bold"><span class="">AMPERA MANDIRI JAYA</p>
-        <p class="fs-4 fw-regular">
+        <p class="fs-1 fw-bold" data-translate="banner_title">
+          AMPERA MANDIRI JAYA
+        </p>
+        <p class="fs-4 fw-regular" data-translate="banner_subtitle">
           Oil Tools Fabrication and Repair Services<br />
           General Supply and Special Tools
         </p>
@@ -357,18 +384,28 @@
       <div class="container">
         <div class="row slide-right">
           <div class="col-lg-6 ml-lg-5">
-            <h2 class="fw-medium">Profile Company</h2>
-            <p class="fw-regular mt-4">
-              PT Ampera Mandiri Jaya merupakan perusahaan yang bergerak di bidang
-              manufaktur industri Palm Oil dan industri Oil and Gas. Kami
-              memiliki pengalaman dalam pembuatan peralatan yang dibutuhkan
-              dalam proses pengolahan kelapa sawit sesuai permintaan customer
-              dan kami berpengalaman melayani pembuatan peralatan yang digunakan
-              dalam industri minyak dan gas maupun spesial tools lainnya.
+            <h2 class="fw-medium" data-translate="company_profile_title">
+              Profil Perusahaan
+            </h2>
+            <p
+              class="fw-regular mt-4"
+              data-translate="company_profile_description"
+            >
+              PT Ampera Mandiri Jaya didirikan pada tahun 2021 dan merupakan
+              perusahaan yang bergerak di bidang manufaktur industri Palm Oil
+              dan industri Oil and Gas. Kami memiliki pengalaman dalam pembuatan
+              peralatan yang dibutuhkan dalam proses pengolahan kelapa sawit
+              sesuai permintaan customer dan kami berpengalaman melayani
+              pembuatan peralatan yang digunakan dalam industri minyak dan gas
+              maupun spesial tools lainnya.
             </p>
           </div>
           <div class="ourlogo">
-            <img src="img/AMJ_Logo.png" alt="Company Profile" class="img-fluid" />
+            <img
+              src="img/AMJ_Logo.png"
+              alt="Company Profile"
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>
@@ -377,13 +414,13 @@
     <!-- Visi dan Misi Section -->
     <section id="visi_" class="section-visi text-center">
       <div class="container slide-up">
-        <h2 class="fw-medium">Visi</h2>
-        <p class="visi-misi fw-regular">
+        <h2 class="fw-medium" data-translate="vision_title">Visi</h2>
+        <p class="visi-misi fw-regular" data-translate="vision_description">
           Membangun perusahaan yang terpercaya melalui profesionalisme <br />
           dan etika bisnis untuk mencapai kepuasan pelanggan
         </p>
-        <h2 class="fw-medium">Misi</h2>
-        <p class="visi-misi fw-regular">
+        <h2 class="fw-medium" data-translate="mission_title">Misi</h2>
+        <p class="visi-misi fw-regular" data-translate="mission_description">
           Berkomitmen untuk memenuhi kebutuhan pelanggan melalui tenaga
           profesional <br />
           dan fasilitas produksi canggih, serta meningkatkan kepuasan pelanggan
@@ -394,38 +431,68 @@
 
     <!-- Project Kami Section -->
     <section id="project_" class="section-project text-center slide-up">
-      <div class="project-container py-2">  
-        <h2 class="fw-medium py-4 pb-4">Preview Project</h2>
+      <div class="project-container py-2">
+        <h2 class="fw-medium py-4 pb-4" data-translate="projects_preview_title">
+          Pratinjau Proyek
+        </h2>
         <div class="row">
           <div class="col-md-3 col-sm-6 mb-4">
             <div class="card">
-              <img src="img/mud_tank.png" alt="Project 1" class="project-img card-img-top" />
+              <img
+                src="img/mud_tank.png"
+                alt="Project 1"
+                class="project-img card-img-top"
+              />
               <div class="card-body">
-                <p class="fw-medium">MUD Tank <br> PT Umran Rubi Jaya</p>
+                <p class="fw-medium">
+                  MUD Tank <br />
+                  Project PT Umran Rubi Perkasa
+                </p>
               </div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 mb-4">
             <div class="card">
-              <img src="img/airlock.png" alt="Project 2" class="project-img card-img-top" />
+              <img
+                src="img/airlock.png"
+                alt="Project 2"
+                class="project-img card-img-top"
+              />
               <div class="card-body">
-                <p class="fw-medium">Airlock Destoner <br> Project Kalimantan Barat & Nabire</p>
+                <p class="fw-medium">
+                  Airlock Destoner <br />
+                  Project Kalimantan Barat & Nabire
+                </p>
               </div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 mb-4">
             <div class="card">
-              <img src="img/thresher1.png" alt="Project 3" class="project-img card-img-top" />
+              <img
+                src="img/thresher1.png"
+                alt="Project 3"
+                class="project-img card-img-top"
+              />
               <div class="card-body">
-                <p class="fw-medium">Thresher Drum <br> Project Kalimantan Tengah</p>
+                <p class="fw-medium">
+                  Thresher Drum <br />
+                  Project Kalimantan Tengah
+                </p>
               </div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 mb-4">
             <div class="card">
-              <img src="img/wttank.png" alt="Project 4" class="project-img card-img-top" />
+              <img
+                src="img/watertank.jpeg"
+                alt="Project 4"
+                class="project-img card-img-top"
+              />
               <div class="card-body">
-                <p class="fw-medium">Water Tank <br> Project Lamongan Jawa Timur</p>
+                <p class="fw-medium">
+                  Water Tank <br />
+                  Project Lamongan Jawa Timur
+                </p>
               </div>
             </div>
           </div>
@@ -436,21 +503,27 @@
     <!-- Services Section -->
     <section class="service-section">
       <div class="container-services">
-        <h2 class="title-services">Our Services</h2>
+        <h2 class="title-services" data-translate="services_title">
+          Layanan kami
+        </h2>
         <div class="service-grid">
           <div class="service-item py-5">
             <i class="fa-solid fa-toolbox fa-5x my-3"></i>
-            <h2 class="fs-3 mt-2">Oil Tools Fabrication</h2>
-            <p class="fw-regular mt-2">
-              Kami menyediakan layanan pembuatan alat pendukung 
-              sektor oil and gas serta sektor palm oil sesuai spesifikasi yang dibutuhkan
-              oleh pelanggan.
+            <h2 class="fs-3 mt-2" data-translate="services1_title">
+              Oil Tools Fabrication
+            </h2>
+            <p class="fw-regular mt-2" data-translate="services1_description">
+              Kami menyediakan layanan pembuatan alat pendukung sektor oil and
+              gas serta sektor palm oil sesuai spesifikasi yang dibutuhkan oleh
+              pelanggan.
             </p>
           </div>
           <div class="service-item py-5">
             <i class="fas fa-tools fa-5x my-3"></i>
-            <h2 class="fs-3 mt-2">Repair Services</h2>
-            <p class="fw-regular mt-2">
+            <h2 class="fs-3 mt-2" data-translate="services2_title">
+              Repair Services
+            </h2>
+            <p class="fw-regular mt-2" data-translate="services2_description">
               Kami menyediakan layanan perbaikan <br />dan pemeliharaan untuk
               kebutuhan pelanggan dan sesuai permintaan serta spesifikasi yang
               diinginkan.
@@ -458,8 +531,10 @@
           </div>
           <div class="service-item py-5">
             <i class="fa-regular fa-handshake fa-5x my-3"></i>
-            <h2 class="fs-3 mt-2">General Supply</h2>
-            <p class="fw-regular mt-2">
+            <h2 class="fs-3 mt-2" data-translate="services3_title">
+              General Supply
+            </h2>
+            <p class="fw-regular mt-2" data-translate="services3_description">
               Kami menyediakan bahan baku, komponen dan peralatan yang bersifat
               finished good untuk mendukung proses manufaktur.<br />Seperti
               material, peralatan maupun perlengkapan kerja sesuai permintaan
@@ -473,20 +548,26 @@
     <section class="info-pemesanan">
       <div class="info-content">
         <div class="title-content">
-          <h4 class="title fw-medium">Info Pemesanan</h4>
-          <p>Silahkan hubungi kami untuk informasi lebih lanjut</p>
+          <h4 class="title fw-medium" data-translate="info_order_title">
+            Info Pemesanan
+          </h4>
+          <p data-translate="info_order_description">
+            Silahkan hubungi kami untuk informasi lebih lanjut
+          </p>
         </div>
         <div class="office pt-3 mt-lg-2">
-          <h4 class="title-ho fw-medium">Head Office</h4>
-          <p class="fw-regular">
+          <h4 class="title-ho fw-medium" data-translate="head_office_title">
+            Kantor Pusat
+          </h4>
+          <p class="fw-regular" data-translate="head_office_address">
             Mutiara Gading Timur 2 Blok N1/8D<br />
             Mustikajaya, Kota Bekasi, Jawa Barat<br />
             Indonesia 17518
           </p>
         </div>
         <div class="workshop">
-          <h4 class="fw-medium">Workshop</h4>
-          <p class="fw-regular">
+          <h4 class="fw-medium" data-translate="workshop_title">Workshop</h4>
+          <p class="fw-regular" data-translate="workshop_address">
             Jl. WR Supratman RT.001 RW.007<br />
             Kel. Cimuning Mustikajaya, Kota Bekasi 17518
           </p>
@@ -551,6 +632,7 @@
         window.addEventListener("load", handleScroll); // In case element is already in viewport on load
       });
     </script>
+    <script src="ubah_bahasa.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
