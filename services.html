@@ -67,6 +67,27 @@
         z-index: 1000;
       }
 
+      #language-switcher {
+        background: none;
+        border: 1px solid #ccc; /* Tambahkan border untuk membuat tombol lebih menonjol */
+        color: #212529; /* Warna teks sama seperti item navbar */
+        padding: 5px 15px; /* Padding lebih untuk membuat tombol lebih besar */
+        font-weight: bold; /* Sesuaikan dengan gaya item navbar lainnya */
+        cursor: pointer;
+        border-radius: 5px; /* Agar sudut tombol membulat seperti item navbar lainnya */
+        margin-left: 20px;
+      }
+
+      #language-switcher:hover {
+        background-color: #ddd; /* Efek hover dengan latar belakang lebih terang */
+        text-decoration: none; /* Menghilangkan underline saat hover */
+      }
+
+      #language-switcher img {
+        width: 20px;
+        height: 15px;
+      }
+
       .navbar .container {
         display: flex;
         justify-content: space-between;
@@ -152,6 +173,13 @@
         padding: 30px 20px;
       }
 
+      .services-grid p {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.8;
+      }
+
       .service-item {
         background: white;
         color: #212529;
@@ -161,7 +189,7 @@
         margin: 50px;
         transition: transform 0.3s ease, box-shadow 0.3s ease,
           background-color 0.3s ease;
-        border-radius: 8px;
+        border-radius: 0px;
       }
 
       .service-item:hover {
@@ -195,18 +223,23 @@
         padding: 50px 130px;
       }
 
+      .info-pemesanan i {
+        margin-right: 10px;
+        color: white;
+        font-size: 20px;
+      }
+
       .info-content {
         flex: 1;
         margin-right: 30px; /* Memberi jarak antara teks dan peta */
       }
 
-      .map {
-        width: 45%; /* Sesuaikan lebar peta */
+      .email-link {
+        color: white;
       }
 
-      .info-pemesanan i {
-        margin-right: 10px;
-        color: white;
+      .map {
+        width: 45%; /* Sesuaikan lebar peta */
       }
 
       /* Responsif untuk layar kecil */
@@ -219,6 +252,20 @@
         .map {
           width: 100%; /* Lebar penuh untuk iframe pada layar kecil */
           margin-top: 20px; /* Beri jarak antara teks dan iframe */
+        }
+
+        #language-switcher {
+          width: 7rem;
+          margin-left: auto;
+        }
+
+        .navbar .navbar-collapse {
+          text-align: right;
+        }
+
+        .services-grid p {
+          margin: 20px;
+          text-align: justify;
         }
       }
 
@@ -238,27 +285,6 @@
         height: 200px;
         width: 100%;
         background: url("map.png") no-repeat center center/cover;
-      }
-
-      /* Responsive Design */
-      @media screen and (max-width: 768px) {
-        .container {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .nav-links {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .hero {
-          height: 30vh;
-        }
-
-        .project-grid {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>
@@ -285,17 +311,49 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+              <a
+                class="nav-link fw-medium"
+                data-translate="nav_about"
+                href="about.html"
+                >Tentang</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+              <a
+                class="nav-link fw-medium"
+                data-translate="nav_project"
+                href="project.html"
+                >Proyek</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+              <a
+                class="nav-link fw-medium"
+                data-translate="nav_services"
+                href="services.html"
+                >Layanan</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+              <a
+                class="nav-link fw-medium"
+                data-translate="nav_contact"
+                href="contact.html"
+                >Hubungi Kami</a
+              >
             </li>
+            <button
+              id="language-switcher"
+              class="nav-link fw-medium"
+              type="button"
+            >
+              <img
+                src="img/INA_FLAG.png"
+                alt="Indonesia"
+                style="width: 20px; height: 15px; margin-right: 5px"
+              />
+              ID
+            </button>
           </ul>
         </div>
       </div>
@@ -309,36 +367,51 @@
       </div>
     </section>
 
-    <!-- Oil Tools Services Section -->
+    <!-- Services Section -->
     <section class="service-section">
       <div class="container-services">
-        <div class="mt-4 project-grid">
+        <div class="mt-4 services-grid">
           <div class="service-item py-5">
             <i class="fa-solid fa-toolbox fa-5x my-3"></i>
-            <h2 class="fs-3 mt-2">Oil Tools Fabrication</h2>
-            <p class="fw-regular mt-2">
+            <h2 class="fs-3 mt-2" data-translate="services_oiltools_title">
+              Oil Tools Fabrication
+            </h2>
+            <p
+              class="fw-regular mt-2"
+              data-translate="services_oiltools_description"
+            >
               Kami menyediakan layanan pembuatan alat pendukung <br />
               sektor Oil and Gas Palm Oil sesuai spesifikasi yang dibutuhkan
               oleh pelanggan.
             </p>
           </div>
         </div>
-        <div class="mt-4 project-grid">
+        <div class="mt-4 services-grid">
           <div class="service-item py-5">
             <i class="fas fa-tools fa-5x my-3"></i>
-            <h2 class="fs-3 mt-2">Repair Services</h2>
-            <p class="fw-regular mt-2">
+            <h2 class="fs-3 mt-2" data-translate="services_repair_title">
+              Repair Services
+            </h2>
+            <p
+              class="fw-regular mt-2"
+              data-translate="services_repair_description"
+            >
               Kami menyediakan layanan perbaikan <br />dan pemeliharaan untuk
               kebutuhan pelanggan dan sesuai permintaan serta spesifikasi yang
               diinginkan.
             </p>
           </div>
         </div>
-        <div class="mt-4 project-grid">
+        <div class="mt-4 services-grid">
           <div class="service-item py-5">
             <i class="fa-regular fa-handshake fa-5x my-3"></i>
-            <h2 class="fs-3 mt-2">General Supply</h2>
-            <p class="fw-regular mt-2">
+            <h2 class="fs-3 mt-2" data-translate="services_generalsupp_title">
+              General Supply
+            </h2>
+            <p
+              class="fw-regular mt-2"
+              data-translate="services_generalsupp_description"
+            >
               Kami menyediakan bahan baku, komponen dan peralatan yang bersifat
               finished good untuk mendukung proses manufaktur.<br />Seperti
               material, peralatan maupun perlengkapan kerja sesuai permintaan
@@ -353,11 +426,23 @@
     <section class="info-pemesanan">
       <div class="info-content">
         <div class="title-content">
-          <h4 class="title fw-medium">Info Pemesanan</h4>
-          <p>Silahkan hubungi kami untuk informasi lebih lanjut</p>
+          <h4
+            class="title fw-medium"
+            data-translate="services_info_order_title"
+          >
+            Info Pemesanan
+          </h4>
+          <p data-translate="services_info_order_subtitle">
+            Silahkan hubungi kami untuk informasi lebih lanjut
+          </p>
         </div>
         <div class="office pt-3 mt-lg-2">
-          <h4 class="title-ho fw-medium">Head Office</h4>
+          <h4
+            class="title-ho fw-medium"
+            data-translate="services_head_office_title"
+          >
+            Head Office
+          </h4>
           <p class="fw-regular">
             Mutiara Gading Timur 2 Blok N1/8D<br />
             Mustikajaya, Kota Bekasi, Jawa Barat<br />
@@ -365,24 +450,37 @@
           </p>
         </div>
         <div class="workshop">
-          <h4 class="fw-medium">Workshop</h4>
+          <h4 class="fw-medium" data-translate="services_workshop_title">
+            Workshop
+          </h4>
           <p class="fw-regular">
-            JL. WR Supratman RT.001 RW.007 <br />Kel. Cimuning Mustikajaya, Kota
-            Bekasi 17155
+            Jl. WR. Supratman No.16B, RT.003/RW.006, Cimuning, <br />Kec.
+            Mustika Jaya, Kota Bks, Jawa Barat 17155
           </p>
         </div>
         <div class="fw-regular">
           <p class="fw-regular mt-3">
-            <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+            <a
+              href="https://wa.me/6281398223438"
+              target="_blank"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="fab fa-whatsapp"></i> +62 813 9822 3438
+            </a>
           </p>
           <p class="fw-regular mt-3">
-            <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+            <i class="fas fa-envelope"></i>
+            <a
+              href="mailto:marketing@amperamandirijaya.co.id"
+              class="email-link"
+              >marketing@amperamandirijaya.co.id
+            </a>
           </p>
         </div>
       </div>
       <div class="map col-md-6 pt-5">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13239.421902534072!2d107.0266703!3d-6.3122054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69910061e86f89%3A0x1d1220003a4e5dbd!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%202)!5e1!3m2!1sid!2sid!4v1732862344666!5m2!1sid!2sid"
           width="100%"
           height="250"
           frameborder="0"
@@ -394,9 +492,12 @@
 
     <!-- Footer Section -->
     <footer>
-      <p class="copyright">© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+      <p class="copyright" data-translate="footer_text">
+        © 2024 PT Ampera Mandiri Jaya All Rights Reserved
+      </p>
     </footer>
 
+    <script src="ubah_bahasa.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>

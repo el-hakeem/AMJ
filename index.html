@@ -45,6 +45,28 @@
         width: 100%;
         z-index: 1000;
       }
+
+      #language-switcher {
+        background: none;
+        border: 1px solid #ccc; /* Tambahkan border untuk membuat tombol lebih menonjol */
+        color: #212529; /* Warna teks sama seperti item navbar */
+        padding: 5px 15px; /* Padding lebih untuk membuat tombol lebih besar */
+        font-weight: bold; /* Sesuaikan dengan gaya item navbar lainnya */
+        cursor: pointer;
+        border-radius: 5px; /* Agar sudut tombol membulat seperti item navbar lainnya */
+        margin-left: 20px;
+      }
+
+      #language-switcher:hover {
+        background-color: #ddd; /* Efek hover dengan latar belakang lebih terang */
+        text-decoration: none; /* Menghilangkan underline saat hover */
+      }
+
+      #language-switcher img {
+        width: 20px;
+        height: 15px;
+      }
+
       .navbar-brand {
         margin-left: 20px;
       }
@@ -62,7 +84,7 @@
       .nav-links {
         list-style: none;
         display: flex;
-        gap: 20px;
+        gap: 50px;
       }
 
       .nav-links li a {
@@ -114,78 +136,9 @@
         height: auto;
       }
 
-      @media (max-width: 768px) {
-        .about-company {
-          flex-direction: column;
-        }
-
-        .ourlogo {
-          margin-top: 30px;
-        }
-      }
-
       .about-company h2 {
         font-weight: bold;
         margin-top: 20px;
-      }
-
-      /* CSS untuk Service */
-      .title-services {
-        padding: 20px;
-        margin-top: 30px;
-        color: white;
-        font-size: 3;
-        font-weight: medium;
-      }
-
-      .service-section {
-        /* Added horizontal padding for small screens */
-        text-align: center;
-      }
-
-      .container-services {
-        background-image: url(img/Bg_visi.png);
-        background-size: cover;
-        background-position: center;
-        padding: 20px;
-      }
-
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 30px 20px;
-      }
-
-      .service-item {
-        background: white;
-        color: #212529;
-        padding: 10px;
-        text-align: center;
-        margin: 10px; /* Adjusted for smaller margins */
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-          background-color 0.3s ease;
-        border-radius: 15px;
-      }
-
-      .service-item img {
-        width: 50%;
-        height: auto; /* Change to auto to maintain aspect ratio */
-      }
-
-      .service-item:hover {
-        transform: translateY(-10px); /* Mengangkat sedikit elemen */
-        box-shadow: 0 4px 8px #5975d6; /* Tambahkan bayangan */
-        background-color: #f8f9fa; /* Ubah warna background saat hover */
-      }
-
-      /* Tambahkan efek hover untuk ikon */
-      .service-item i {
-        transition: color 0.3s ease;
-      }
-
-      .service-item:hover i {
-        color: #007bff; /* Ubah warna ikon saat hover */
       }
 
       /* CSS untuk visi */
@@ -197,6 +150,13 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+      }
+
+      .visi-misi {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.8;
       }
 
       /* CSS untuk Project */
@@ -232,6 +192,65 @@
         background-color: #f8f9fa; /* Ubah warna background saat hover */
       }
 
+      /* CSS untuk Service */
+      .service-section {
+        /* Added horizontal padding for small screens */
+        text-align: center;
+      }
+
+      .title-services {
+        padding: 20px;
+        margin-top: 1.5rem;
+        color: white;
+        font-size: 3;
+        font-weight: medium;
+      }
+
+      .container-services {
+        background-image: url(img/Bg_visi.png);
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+      }
+
+      .service-item {
+        background: white;
+        color: #212529;
+        padding: 10px;
+        text-align: center;
+        margin: 10px; /* Adjusted for smaller margins */
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+        /* border-radius: 15px; */
+      }
+
+      .service-item img {
+        width: 50%;
+        height: auto; /* Change to auto to maintain aspect ratio */
+      }
+
+      .service-item:hover {
+        transform: translateY(-10px); /* Mengangkat sedikit elemen */
+        box-shadow: 0 4px 8px #5975d6; /* Tambahkan bayangan */
+        background-color: #f8f9fa; /* Ubah warna background saat hover */
+      }
+
+      /* Tambahkan efek hover untuk ikon */
+      .service-item i {
+        transition: color 0.3s ease;
+      }
+
+      .service-item:hover i {
+        color: #007bff; /* Ubah warna ikon saat hover */
+      }
+
       .info-pemesanan {
         display: flex;
         justify-content: space-between;
@@ -253,10 +272,29 @@
       .info-pemesanan i {
         margin-right: 10px;
         color: white;
+        font-size: 20px;
+      }
+
+      .email-link {
+        color: white;
       }
 
       /* Responsif untuk layar kecil */
       @media only screen and (max-width: 768px) {
+        .about-company {
+          flex-direction: column;
+        }
+
+        .ourlogo {
+          margin-top: 30px;
+        }
+
+        .row {
+          padding: 10px;
+          margin: 10px;
+        }
+
+        /* CSS untuk Kontak */
         .info-pemesanan {
           flex-direction: column; /* Stack elemen di atas satu sama lain */
           padding: 50px 30px; /* Sesuaikan padding untuk mobile */
@@ -265,6 +303,24 @@
         .map {
           width: 100%; /* Lebar penuh untuk iframe pada layar kecil */
           margin-top: 20px; /* Beri jarak antara teks dan iframe */
+        }
+
+        #language-switcher {
+          width: 7rem;
+          margin-left: auto;
+        }
+
+        .navbar .navbar-collapse {
+          text-align: right;
+        }
+
+        .visi-misi {
+          text-align: justify;
+        }
+
+        .service-grid p {
+          margin: 20px;
+          text-align: justify;
         }
       }
 
@@ -360,7 +416,18 @@
                 >Hubungi Kami</a
               >
             </li>
-            <button id="language-switcher" data-lang="en">EN</button>
+            <button
+              id="language-switcher"
+              class="nav-link fw-medium"
+              type="button"
+            >
+              <img
+                src="img/INA_FLAG.png"
+                alt="Indonesia"
+                style="width: 20px; height: 15px; margin-right: 5px"
+              />
+              ID
+            </button>
           </ul>
         </div>
       </div>
@@ -391,13 +458,13 @@
               class="fw-regular mt-4"
               data-translate="company_profile_description"
             >
-              PT Ampera Mandiri Jaya didirikan pada tahun 2021 dan merupakan
+              PT Ampera Mandiri Jaya didirikan pada tahun 2021, adalah
               perusahaan yang bergerak di bidang manufaktur industri Palm Oil
-              dan industri Oil and Gas. Kami memiliki pengalaman dalam pembuatan
-              peralatan yang dibutuhkan dalam proses pengolahan kelapa sawit
-              sesuai permintaan customer dan kami berpengalaman melayani
-              pembuatan peralatan yang digunakan dalam industri minyak dan gas
-              maupun spesial tools lainnya.
+              serta sektor Oil and Gas. Kami memiliki pengalaman dalam
+              memproduksi peralatan sesuai permintaan pelanggan, khususnya untuk
+              mendukung proses pengolahan kelapa sawit. Selain itu, kami juga
+              berpengalaman dalam pembuatan peralatan untuk industri minyak dan
+              gas serta berbagai spesial tools lainnya.
             </p>
           </div>
           <div class="ourlogo">
@@ -416,15 +483,14 @@
       <div class="container slide-up">
         <h2 class="fw-medium" data-translate="vision_title">Visi</h2>
         <p class="visi-misi fw-regular" data-translate="vision_description">
-          Membangun perusahaan yang terpercaya melalui profesionalisme <br />
-          dan etika bisnis untuk mencapai kepuasan pelanggan
+          Membangun perusahaan yang terpercaya melalui profesionalisme dan etika
+          bisnis untuk mencapai kepuasan pelanggan
         </p>
         <h2 class="fw-medium" data-translate="mission_title">Misi</h2>
         <p class="visi-misi fw-regular" data-translate="mission_description">
           Berkomitmen untuk memenuhi kebutuhan pelanggan melalui tenaga
-          profesional <br />
-          dan fasilitas produksi canggih, serta meningkatkan kepuasan pelanggan
-          secara berkelanjutan.
+          profesional dan fasilitas produksi canggih, serta meningkatkan
+          kepuasan pelanggan secara berkelanjutan.
         </p>
       </div>
     </section>
@@ -444,9 +510,8 @@
                 class="project-img card-img-top"
               />
               <div class="card-body">
-                <p class="fw-medium">
-                  MUD Tank <br />
-                  Project PT Umran Rubi Perkasa
+                <p class="fw-medium" data-translate="preview_project1">
+                  <strong>MUD TANK</strong><br />Project PT Umran Rubi Perkasa
                 </p>
               </div>
             </div>
@@ -459,9 +524,9 @@
                 class="project-img card-img-top"
               />
               <div class="card-body">
-                <p class="fw-medium">
-                  Airlock Destoner <br />
-                  Project Kalimantan Barat & Nabire
+                <p class="fw-medium" data-translate="preview_project2">
+                  <strong>AIRLOCK DESTONER</strong><br />Project Kalimantan
+                  Tengah
                 </p>
               </div>
             </div>
@@ -474,9 +539,8 @@
                 class="project-img card-img-top"
               />
               <div class="card-body">
-                <p class="fw-medium">
-                  Thresher Drum <br />
-                  Project Kalimantan Tengah
+                <p class="fw-medium" data-translate="preview_project3">
+                  <strong>THRESHER DRUM</strong><br />Project Kalimantan Tengah
                 </p>
               </div>
             </div>
@@ -489,9 +553,9 @@
                 class="project-img card-img-top"
               />
               <div class="card-body">
-                <p class="fw-medium">
-                  Water Tank <br />
-                  Project Lamongan Jawa Timur
+                <p class="fw-medium" data-translate="preview_project4">
+                  <strong>WATER TANK 200bbl & 150bbl</strong><br />Project
+                  Mustika Petrotech Indonesia
                 </p>
               </div>
             </div>
@@ -545,6 +609,7 @@
       </div>
     </section>
 
+    <!-- Section Kontak -->
     <section class="info-pemesanan">
       <div class="info-content">
         <div class="title-content">
@@ -567,23 +632,34 @@
         </div>
         <div class="workshop">
           <h4 class="fw-medium" data-translate="workshop_title">Workshop</h4>
-          <p class="fw-regular" data-translate="workshop_address">
-            Jl. WR Supratman RT.001 RW.007<br />
-            Kel. Cimuning Mustikajaya, Kota Bekasi 17518
+          <p class="fw-regular">
+            Jl. WR. Supratman No.16B, RT.003/RW.006, Cimuning, <br />Kec.
+            Mustika Jaya, Kota Bks, Jawa Barat 17155
           </p>
         </div>
         <div class="fw-regular">
           <p class="fw-regular mt-3">
-            <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+            <a
+              href="https://wa.me/6281398223438"
+              target="_blank"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="fab fa-whatsapp"></i> +62 813 9822 3438
+            </a>
           </p>
           <p class="fw-regular mt-3">
-            <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+            <i class="fas fa-envelope"></i>
+            <a
+              href="mailto:marketing@amperamandirijaya.co.id"
+              class="email-link"
+              >marketing@amperamandirijaya.co.id</a
+            >
           </p>
         </div>
       </div>
       <div class="map col-md-6 pt-5">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13239.421902534072!2d107.0266703!3d-6.3122054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69910061e86f89%3A0x1d1220003a4e5dbd!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%202)!5e1!3m2!1sid!2sid!4v1732862344666!5m2!1sid!2sid"
           width="100%"
           height="250"
           frameborder="0"

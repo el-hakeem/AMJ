@@ -68,6 +68,27 @@
         z-index: 1000;
       }
 
+      #language-switcher {
+        background: none;
+        border: 1px solid #ccc; /* Tambahkan border untuk membuat tombol lebih menonjol */
+        color: #212529; /* Warna teks sama seperti item navbar */
+        padding: 5px 15px; /* Padding lebih untuk membuat tombol lebih besar */
+        font-weight: bold; /* Sesuaikan dengan gaya item navbar lainnya */
+        cursor: pointer;
+        border-radius: 5px; /* Agar sudut tombol membulat seperti item navbar lainnya */
+        margin-left: 20px;
+      }
+
+      #language-switcher:hover {
+        background-color: #ddd; /* Efek hover dengan latar belakang lebih terang */
+        text-decoration: none; /* Menghilangkan underline saat hover */
+      }
+
+      #language-switcher img {
+        width: 20px;
+        height: 15px;
+      }
+
       .navbar .container {
         display: flex;
         justify-content: space-between;
@@ -126,7 +147,7 @@
 
       @media (min-width: 768px) {
         .title-banner {
-          padding: 10px 100px; /* Untuk layar yang lebih besar */
+          padding: 10px 100px; 
         }
       }
 
@@ -136,6 +157,7 @@
         color: #333;
       }
 
+      /* CSS untuk About Company */
       .about-company {
         justify-content: space-between;
         display: flex;
@@ -168,10 +190,12 @@
         .ourlogo {
           margin-top: 30px;
         }
-      }
 
+        .management-grid{
+          padding: 10px;
+          margin: 0px;
+        }
 
-      @media (max-width: 768px) {
         .title-certificate {
           font-size: 1.5rem;
         }
@@ -184,15 +208,14 @@
           max-width: 80%;
           margin: 0 auto;
         }
-      }
 
-      @media (max-width: 480px) {
-        .title-certificate {
-          font-size: 1.2rem;
+        #language-switcher {
+          width: 7rem;
+          margin-left: auto;
         }
 
-        .certificate-item p {
-          font-size: 1rem;
+        .navbar .navbar-collapse {
+          text-align: right;
         }
       }
 
@@ -201,7 +224,7 @@
         margin-top: 5px;
       }
 
-      /* CSS untuk Project*/
+      /* CSS untuk Management*/
       .management-section {
         padding: 50px 0;
         text-align: center;
@@ -257,7 +280,7 @@
         justify-content: center;
         align-items: center;
         gap: 30px;
-        animation: scroll 20s linear infinite;
+        animation: scroll 30s linear infinite;
         padding-top: 50px;
         padding-bottom: 5rem;
       }
@@ -277,6 +300,7 @@
         }
       }
       
+      /* CSS untuk Sertifikat */
       .certificates-section{
         background-color: #212529;
         color: #fff;
@@ -309,55 +333,60 @@
       }
 
       .download-btn1 {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #fff;
-      background-color: #5975d6; /* Warna awal */
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: #5975d6; /* Warna awal */
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
       }
 
       .download-btn2 {
-          display: inline-block;
-          margin-top: 10px;
-          padding: 10px 20px;
-          font-size: 16px;
-          color: #fff;
-          background-color: #5975d6; /* Warna awal */
-          text-align: center;
-          text-decoration: none;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #5975d6; /* Warna awal */
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
       }
 
       .download-btn1:hover,
       .download-btn2:hover {
-          background-color: #4a5fb8; /* Warna sedikit lebih gelap saat hover */
+        background-color: #f0f0f0; /* Warna sedikit lebih gelap saat hover */
       }
 
       .download-btn1:active,
       .download-btn2:active {
-          background-color: #3f519b; /* Warna saat aktif */
+        background-color: #5975d6; /* Warna saat aktif */
       }
-
 
       .doc-cp {
         margin-top: 20px;
       }
 
-      /* Contact Section */
+      /* CSS untuk Kontak */
       .contact p {
         margin-bottom: 5px;
+        font-size: 15px;
       }
 
       /* Ikon dalam kontak */
       .contact i {
         margin-right: 10px;
         color: white; /* Warna putih untuk ikon */
+        font-size: 20px;
+      }
+
+      .email-link{
+        color: white;
       }
 
       /* Responsive iframe untuk Google Maps */
@@ -395,17 +424,49 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="about.html">Tentang</a>
+              <a
+                class="nav-link fw-medium"
+                href="about.html"
+                data-translate="nav_about"
+                >Tentang</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="project.html">Proyek</a>
+              <a
+                class="nav-link fw-medium"
+                href="project.html"
+                data-translate="nav_project"
+                >Proyek</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="services.html">Layanan</a>
+              <a
+                class="nav-link fw-medium"
+                href="services.html"
+                data-translate="nav_services"
+                >Layanan</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="contact.html">Hubungi Kami</a>
+              <a
+                class="nav-link fw-medium"
+                href="contact.html"
+                data-translate="nav_contact"
+                >Hubungi Kami</a
+              >
             </li>
+            <button
+              id="language-switcher"
+              class="nav-link fw-medium"
+              type="button"
+            >
+              <img
+                src="img/INA_FLAG.png"
+                alt="Indonesia"
+                style="width: 20px; height: 15px; margin-right: 5px"
+              />
+              ID
+            </button>
           </ul>
         </div>
       </div>
@@ -414,8 +475,8 @@
     <!-- Banner -->
     <section class="banner">
       <div class="title-banner">
-        <h2>Tentang Kami</h2>
-        <p class="fs-5 fw-regular">(About Us)</p>
+        <h2 data-translate="about_title_banner">Tentang Kami</h2>
+        <p class="fs-5 fw-regular" data-translate="about_subtitle_banner">(About Us)</p>
       </div>
     </section>
 
@@ -424,16 +485,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 ml-lg-5 slide-right">
-            <h2 class="fw-medium">Profil Perusahaan</h2>
-            <p class="fw-regular mt-4">
-              PT Ampera Mandiri Jaya merupakan perusahaan yang bergerak dibidang
-              manufaktur industri Palm Oil dan industri Oil and Gas. Perusahaan
-              Ampera Mandiri Jaya berdiri sejak tahun 2021 kami berkomitmen
-              untuk membangun perusahaan manufaktur terpercaya dan profesional
-              pada sektor Oil and Gas dan Palm Oil di Indonesia dengan semangat
-              serta usaha yang gigih para pelopor PT Ampera Mandiri Jaya kami
-              berupaya untuk mencapai kepuasan pelanggan melalui pemenuhan
-              kebutuhan dari setiap pelanggan.
+            <h2 class="fw-medium" data-translate="about_title_company_profile">Profil Perusahaan</h2>
+            <p class="fw-regular mt-4" data-translate="about_description_company_profile">
+              PT Ampera Mandiri Jaya adalah perusahaan yang bergerak di industri manufaktur Palm Oil serta sektor Oil and Gas. PT Ampera Mandiri Jaya berdiri sejak tahun 2021, kami berkomitmen untuk membangun perusahaan manufaktur yang terpercaya dan profesional di sektor Palm Oil dan Oil and Gas di Indonesia. Dengan semangat dan dedikasi para pelopor PT Ampera Mandiri Jaya, kami berupaya mencapai kepuasan pelanggan melalui pemenuhan kebutuhan setiap pelanggan.
             </p>
           </div>
           <div class="ourlogo">
@@ -445,29 +499,29 @@
 
     <!-- Team Management Section -->
     <section class="management-section dark-bg">
-      <h2 class="fw-medium title-gas">Team Management PT Ampera Mandiri Jaya</h2>
+      <h2 class="fw-medium title-gas" data-translate="about_team_management">Team Management PT Ampera Mandiri Jaya</h2>
       <div class="mt-lg-4 management-grid px-md-5">
         <div class="management-item">
           <img src="img/person1.jpg" alt="person1" class="management-img" />
-          <p class="management-deskripsi fw-regular mt-4">
+          <p class="management-deskripsi fw-regular mt-4" data-translate="about_team1_management">
             <strong>Mr Abie</strong><br />CEO PT Ampera Mandiri Jaya
           </p>
         </div>
         <div class="management-item">
           <img src="img/constructor2.jpg" alt="Person2" class="management-img" />
-          <p class="management-deskripsi fw-regular mt-4">
+          <p class="management-deskripsi fw-regular mt-4" data-translate="about_team2_management">
             <strong>Mr Romy</strong><br />Direktur Utama
           </p>
         </div>
         <div class="management-item">
           <img src="img/constructor.jpg" alt="Person3" class="management-img" />
-          <p class="management-deskripsi fw-regular mt-4">
+          <p class="management-deskripsi fw-regular mt-4" data-translate="about_team3_management">
             <strong>Mr Basuki</strong><br />Direksi
           </p>
         </div>
         <div class="management-item">
           <img src="img/person2.jpg" alt="Person4" class="management-img" />
-          <p class="management-deskripsi fw-regular mt-4">
+          <p class="management-deskripsi fw-regular mt-4" data-translate="about_team4_management">
             <strong>Mr Subhan</strong><br />Direksi
           </p>
         </div>
@@ -477,7 +531,7 @@
     <!-- Clients Section -->
     <section class="clients py-5">
       <div class="container text-center">
-        <h2 class="fw-medium mb-4">Our Value Customers </h2>
+        <h2 class="fw-medium mb-4" data-translate="about_costumers">Our Value Customers </h2>
         <div class="logos-wrapper">
           <div class="logos">
             <img src="img/PARKER.png" alt="PT PARKER WELLBORE INDONESIA" />
@@ -499,9 +553,10 @@
       </div>
     </section>
 
+    <!-- Section Sertifikat -->
     <section class="certificates-section py-5">
       <div class="container">
-        <h1 class="title-certificate">
+        <h1 class="title-certificate" data-translate="about_certificate">
           Our Certificate International Organization For Standardization (ISO)
         </h1>
         <div class="certificates m-4">
@@ -526,32 +581,49 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h3 class="fw-medium">Info Pemesanan Hubungi Kami</h3>
+            <h4 class="title fw-medium" data-translate="about_info_order_title">
+            Info Pemesanan
+          </h4>
+          <p data-translate="about_info_order_description">
+            Silahkan hubungi kami untuk informasi lebih lanjut
+          </p>
             <p class="fw-regular mt-3">
-              <i class="fas fa-phone-alt"></i> +62 813 9822 3438
+              <a
+                href="https://wa.me/6281398223438"
+                target="_blank"
+                style="text-decoration: none; color: inherit"
+              >
+                <i class="fab fa-whatsapp"></i> +62 813 9822 3438
+              </a>
             </p>
             <p class="fw-regular mt-3">
-              <i class="fas fa-envelope"></i> marketing@amperamandirijaya.co.id
+              <i class="fas fa-envelope"></i>
+              <a
+                href="mailto:marketing@amperamandirijaya.co.id"
+                class="email-link"
+                >marketing@amperamandirijaya.co.id
+              </a>
             </p>
             <p class="fw-regular mt-3">
-              <i class="fas fa-map-marker-alt"></i> JL. WR Supratman RT.001 RW.007<br> Kel. Cimuning Mustikajaya, Kota Bekasi 17155
+              <i class="fas fa-map-marker-alt"></i> Jl. WR. Supratman No.16B, RT.003/RW.006, Cimuning, <br />Kec.
+            Mustika Jaya, Kota Bks, Jawa Barat 17155
             </p>
             <div class="doc-cp py-4">
-              <p class="fw-regular">Company Profile Palm Oil Mill</p>
-              <a href="./03 COMPANY PROFILE PT. AMJ PALM OIL MILL.pdf" download="03 COMPANY PROFILE PT. AMJ PALM OIL MILL.pdf" class="download-btn1">
+              <p class="fw-regular" data-translate="about_document1_company">Company Profile Palm Oil Mill</p>
+              <a data-translate="about_document1_unduh" href="./03 COMPANY PROFILE PT. AMJ PALM OIL MILL.pdf" download="03 COMPANY PROFILE PT. AMJ PALM OIL MILL.pdf" class="download-btn1">
                   Unduh Dokumen PDF
               </a>
             </div>
             <div class="doc-cp">
-              <p class="fw-regular">Company Profile Fabrikasi</p>
-              <a href="./COMPANY PROFILE FABRIKASI PT. Ampera Mandiri Jaya (1).pdf" download="COMPANY PROFILE FABRIKASI PT. Ampera Mandiri Jaya (1).pdf" class="download-btn2">
+              <p class="fw-regular" data-translate="about_document2_company">Company Profile Fabrikasi</p>
+              <a data-translate="about_document2_unduh" href="./COMPANY PROFILE FABRIKASI PT. Ampera Mandiri Jaya (1).pdf" download="COMPANY PROFILE FABRIKASI PT. Ampera Mandiri Jaya (1).pdf" class="download-btn2">
                   Unduh Dokumen PDF
               </a>
             </div>
           </div>
           <div class="col-md-6 pt-5">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6319113722484!2d107.02423847409763!3d-6.311991461767711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699100656b886f%3A0xa6909a30ea87ab6f!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%201)!5e0!3m2!1sid!2sid!4v1730267367603!5m2!1sid!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13239.421902534072!2d107.0266703!3d-6.3122054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69910061e86f89%3A0x1d1220003a4e5dbd!2sPT.%20AMPERA%20MANDIRI%20JAYA%20(WORKSHOP%202)!5e1!3m2!1sid!2sid!4v1732862344666!5m2!1sid!2sid"
               width="100%"
               height="250"
               frameborder="0"
@@ -566,7 +638,7 @@
 
     <footer class="text-center py-4">
       <div class="container">
-        <p>© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
+        <p data-translate="footer_text">© 2024 PT Ampera Mandiri Jaya All Rights Reserved</p>
       </div>
     </footer>
 
@@ -605,6 +677,7 @@
         window.addEventListener("load", handleScroll); // In case element is already in viewport on load
       });
     </script>
+    <script src="ubah_bahasa.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
