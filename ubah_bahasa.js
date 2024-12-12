@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Kami menyediakan bahan baku, komponen, dan peralatan yang bersifat finished good untuk mendukung proses manufaktur, seperti material, peralatan, maupun perlengkapan kerja sesuai permintaan pelanggan.",
       services_info_order_title: "Info Pemesanan",
       services_info_order_subtitle:
-        "Silahkan hubungi kami untuk informasi lebih lanjut.",
+        "Silahkan hubungi kami untuk informasi lebih lanjut",
       services_head_office_title: "Kantor Pusat",
       services_workshop_title: "Workshop",
 
